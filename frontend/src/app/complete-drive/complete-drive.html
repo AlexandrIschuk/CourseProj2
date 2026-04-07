@@ -1,0 +1,42 @@
+<div class="login-container">
+
+
+  <form class="login-form" [formGroup]="completeForm" (ngSubmit)="onSubmit()">
+    <h2 class="login-title">Завершение поездки</h2>
+    @if (drive.tariff.tariffType == "KILOMETER") {
+      <div class="form-group">
+        <label for="username">Пройденное расстояние</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          class="form-control"
+          formControlName="totalDistance"
+          placeholder="Введите пройденное расстояние"
+          [class.is-invalid]="totalDistance?.invalid && totalDistance?.touched">
+        @if (totalDistance?.invalid && totalDistance?.touched){
+          <div class="validation-error">
+            @if (totalDistance?.errors?.['required']){
+              <small>Ввод обязателен</small>
+            }
+          </div>
+        }
+      </div>
+      @if (errorMessage) {
+        <div class="alert alert-error">
+          {{ errorMessage }}
+          <button type="button" class="alert-close" (click)="errorMessage = ''">×</button>
+        </div>
+      }
+      <button type="submit" class="login-btn" >
+        Завершить
+      </button>
+    }
+    @if (successMessage) {
+      <div class="alert alert-success">
+        {{ successMessage }}
+      </div>
+    }
+  </form>
+</div>
+

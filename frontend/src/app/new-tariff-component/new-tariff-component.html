@@ -1,0 +1,61 @@
+<div class="login-container">
+
+
+  <form class="login-form" [formGroup]="newTariffForm" (ngSubmit)="onSubmit()">
+    <h2 class="login-title">Добавить тариф</h2>
+
+    <div class="form-group">
+      <label for="username">Название</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        class="form-control"
+        formControlName="name"
+        [class.is-invalid]="name?.invalid && name?.touched">
+      @if (name?.invalid && name?.touched){
+        <div class="validation-error">
+          @if (name?.errors?.['required']){
+            <small>Ввод обязателен</small>
+          }
+        </div>
+      }
+
+      <label for="username">Стоимость</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        class="form-control"
+        formControlName="price"
+        [class.is-invalid]="price?.invalid && price?.touched">
+      @if (price?.invalid && price?.touched){
+        <div class="validation-error">
+          @if (price?.errors?.['required']){
+            <small>Ввод обязателен</small>
+          }
+          @if (price?.errors?.['pattern']){
+            <small>Только цифры!</small>
+          }
+        </div>
+      }
+      <label for="username">Тип расчета</label>
+      <select
+      id="taskStatus"
+      class="form-control"
+      formControlName="tariffType"
+      [class.is-invalid]="tariffType?.invalid && tariffType?.touched">
+        @for (method of methods; track method.value) {
+          <option [ngValue]="method.value">
+            {{ method.label }}
+          </option>
+        }
+
+      </select>
+    </div>
+    <button type="submit" class="login-btn" >
+      Добавить
+    </button>
+  </form>
+</div>
+

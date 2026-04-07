@@ -1,0 +1,44 @@
+<div app-navbar-component></div>
+<table class="tasks-table">
+  <thead>
+  <tr>
+    <th>Автомобиль</th>
+    <th>Номер автомобиля</th>
+    <th>Тариф</th>
+    <th>Дата начала поездки</th>
+    <th>Дата окончания поездки</th>
+    <th>Пройденное расстояние/время</th>
+    <th>Итоговая стоимость</th>
+    <th>Статус</th>
+    <th>Действия</th>
+  </tr>
+  </thead>
+  <tbody>
+    @if (drives$ | async; as drives){
+      @for (drive of drives; track drive.driveId){
+        <tr app-drive-component
+            [drive]="drive"
+            [showCancelButton]="false"
+            [showEndButton]="false"
+            [showAdminInfo]="false"
+            (delete)="deleteDrive($event)">
+        </tr>
+      }
+    }
+  </tbody>
+</table>
+@if (drives$ | async; as drives){
+  @if (drives.length == 0) {
+    <div class="alert alert-error">
+      История пуста
+    </div>
+  }
+}
+@if (errorMessage) {
+  <div class="alert alert-error">
+    {{ errorMessage }}
+    <button type="button" class="alert-close" (click)="errorMessage = ''">×</button>
+  </div>
+}
+
+

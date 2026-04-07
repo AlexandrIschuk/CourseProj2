@@ -1,0 +1,32 @@
+<div app-navbar-component (newCar)="newCar()"></div>
+<table class="tasks-table">
+  <thead>
+  <tr>
+    <th>ID Машины</th>
+    <th>Марка</th>
+    <th>Модель</th>
+    <th>Госномер</th>
+    <th>Год выпуска</th>
+    <th>Статус</th>
+    <th>Действия</th>
+  </tr>
+  </thead>
+  <tbody>
+    @if (cars$ | async; as cars){
+      @for (car of cars; track car.carId){
+        <tr app-car-component
+            [car]="car"
+            (delete)="deleteCar($event)">
+        </tr>
+      }
+    }
+  </tbody>
+</table>
+@if (cars$ | async; as cars){
+  @if (cars.length == 0) {
+    <div class="alert alert-error">
+      Нет автомобилей
+    </div>
+  }
+}
+

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="348b5cae-5dde-494e-b762-17cc714a2783" name="Changes" comment="intial commit" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AlexandrIschuk&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AlexandrIschuk/fullstack_course.git&quot;,
+    &quot;accountId&quot;: &quot;714320d4-3bd3-4676-84d2-253cbcfab180&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="3C20gAafaaJlWCwKkabhoDeE1J9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.CarshWebCourseApplication.executor": "Run",
+    "credentialsType com.jetbrains.nodejs.remote.NodeJSCreateRemoteSdkForm": "Docker",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "ts.external.directory.path": "C:\\Users\\ischu\\Documents\\CourseProj\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="CarshWebCourseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/Java/jdk-24" />
+      <envs>
+        <env name="JWT_SECRET" value="SFSDGFLKNIOW$NJFWFNRKJGNWREG" />
+      </envs>
+      <module name="study-backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.ssau.carshwebcourse.CarshWebCourseApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="348b5cae-5dde-494e-b762-17cc714a2783" name="Changes" comment="" />
+      <created>1775568469536</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1775568469536</updated>
+      <workItem from="1775568470796" duration="38000" />
+      <workItem from="1775568998069" duration="185000" />
+      <workItem from="1775569326095" duration="7371000" />
+      <workItem from="1775576718448" duration="240000" />
+      <workItem from="1775576966009" duration="1607000" />
+      <workItem from="1775578890059" duration="5894000" />
+      <workItem from="1775585144485" duration="527000" />
+      <workItem from="1775585702153" duration="686000" />
+      <workItem from="1775586405101" duration="182000" />
+    </task>
+    <task id="LOCAL-00001" summary="intial commit">
+      <option name="closed" value="true" />
+      <created>1775585975481</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1775585975481</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/backend" />
+    </ignored-roots>
+    <MESSAGE value="intial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="intial commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/app/services/drive.service.ts</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

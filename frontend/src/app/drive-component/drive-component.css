@@ -1,0 +1,85 @@
+.status[data-status="ACTIVE"] {
+  display: inline;
+  color: #4CAF50;
+}
+
+.status[data-status="ACTIVE"]::before {
+  content: "Активна";
+
+}
+
+.status[data-status="CANCELLED"] {
+  display: inline;
+  color: #f44336;
+}
+
+.status[data-status="CANCELLED"]::before {
+  content: "Отменена";
+}
+
+.status[data-status="PENDING_PAYMENT"] {
+  display: inline;
+  color: darkorange;
+}
+
+.status[data-status="PENDING_PAYMENT"]::before {
+  content: "Ожидает оплаты";
+}
+
+.status[data-status="COMPLETED"] {
+  display: inline;
+  color: darkcyan;
+}
+
+.status[data-status="COMPLETED"]::before {
+  content: "Завершена";
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.3s;
+}
+
+.edit-btn {
+  background: linear-gradient(135deg, #474747 0%, #3f374d 100%);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+  transform: translateY(-2px);
+}
+
+.delete-btn {
+  background-color: #fafafa;
+  border: 1px solid #474747;
+  color: #474747;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  transform: translateY(-2px);
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  opacity: 0.8;
+}
+
+.td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}

@@ -1,0 +1,50 @@
+<div class="login-container">
+
+  <form class="login-form" [formGroup]="startDriveForm" (ngSubmit)="onSubmit()">
+    <h2 class="login-title">Начать поездку</h2>
+
+    <div class="form-group">
+      <label for="username">Автомобиль</label>
+      <select
+        id="taskStatus"
+        class="form-control"
+        formControlName="car"
+        [class.is-invalid]="car?.invalid && car?.touched">
+        @if (cars$ | async; as cars){
+          @for (car of cars; track car.carRegistrationNumber) {
+            <option [ngValue]="car">
+              {{ car.carBrand }} {{ car.carModel }} {{ car.carRegistrationNumber }}
+            </option>
+          }
+        }
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="username">Тариф</label>
+      <select
+        id="taskStatus"
+        class="form-control"
+        formControlName="tariff"
+        [class.is-invalid]="tariff?.invalid && tariff?.touched">
+        @if (tariffs$ | async; as tariffs){
+          @for (tariff of tariffs; track tariff.name) {
+            <option [ngValue]="tariff">
+              {{ tariff.name }} {{ tariff.price }} Рублей
+            </option>
+          }
+        }
+      </select>
+    </div>
+    @if (errorMessage) {
+      <div class="alert alert-error">
+        {{ errorMessage }}
+        <button type="button" class="alert-close" (click)="errorMessage = ''">×</button>
+      </div>
+    }
+    <button type="submit" class="login-btn" >
+      Начать
+    </button>
+  </form>
+</div>
+

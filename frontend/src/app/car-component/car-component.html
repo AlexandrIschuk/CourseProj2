@@ -1,0 +1,16 @@
+<td class="td">{{ car.carId }}</td>
+<td class="td">{{ car.carBrand }}</td>
+<td class="td">{{ car.carModel }}</td>
+<td class="td">{{ car.carRegistrationNumber }}</td>
+<td class="td">{{ car.year }}</td>
+<td class="td">
+  <span class="status" [attr.data-status]="[`${car.carStatus}`]"></span>
+</td>
+<td class="td">
+  <div class="actions">
+    @if(car.carStatus == "FREE"){
+      <button class="delete-btn" (click)="onDelete()">Удалить авто</button>
+    }
+  </div>
+</td>
+

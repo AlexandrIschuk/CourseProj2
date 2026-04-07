@@ -1,0 +1,57 @@
+<div class="login-container">
+
+
+  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2 class="login-title">Вход в систему</h2>
+
+    <div class="form-group">
+      <label for="username">Email</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        class="form-control"
+        formControlName="email"
+        placeholder="Введите логин"
+        [class.is-invalid]="email?.invalid && email?.touched">
+      @if (email?.invalid && email?.touched){
+        <div class="validation-error">
+          @if (email?.errors?.['required']){
+            <small>Email обязателен</small>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="password">Пароль</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-control"
+        formControlName="password"
+        placeholder="Введите пароль"
+        [class.is-invalid]="password?.invalid && password?.touched">
+      @if (password?.invalid && password?.touched){
+        <div class="validation-error">
+          @if (password?.errors?.['required']){
+            <small>Пароль обязателен</small>
+          }
+        </div>
+      }
+    </div>
+    @if (errorMessage) {
+      <div class="alert alert-error">
+        {{ errorMessage }}
+        <button type="button" class="alert-close" (click)="errorMessage = ''">×</button>
+      </div>
+    }
+    <button type="submit" class="login-btn" >
+      Войти
+    </button>
+    <button class="login-btn" [routerLink]="[`registration`]">
+      Регистрация
+    </button>
+  </form>
+</div>

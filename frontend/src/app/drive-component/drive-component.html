@@ -1,0 +1,43 @@
+@if (showAdminInfo) {
+  <td class="td">{{ drive.driveId }}</td>
+}
+@if (showAdminInfo) {
+  <td class="td">{{ drive.userId }}</td>
+}
+<td class="td">{{ drive.car.carBrand }} {{ drive.car.carModel }} {{ drive.car.year }}</td>
+<td class="td">{{ drive.car.carRegistrationNumber }}</td>
+<td class="td">{{ drive.tariff.name }}</td>
+<td class="td">{{ drive.startRental | date:'dd.MM.yyyy HH:mm' }}</td>
+@if(showEndRental){
+  <td class="td">{{ drive.endRental | date:'dd.MM.yyyy HH:mm' }}</td>
+}
+<td class="td">{{ drive.totalDistance }}</td>
+@if(showTotalAmount){
+  <td class="td">{{ drive.totalAmount }} Рублей</td>
+
+}
+<td class="td">
+  <span class="status" [attr.data-status]="[`${drive.driveStatus}`]"></span>
+</td>
+
+<td class="td">
+  <div class="actions">
+    @if(showEndButton && drive.driveStatus != "PENDING_PAYMENT"){
+      <button class="edit-btn" (click)="onComplete()">Завершить поездку</button>
+    }
+    @if(showCancelButton && drive.driveStatus != "PENDING_PAYMENT"){
+      <button class="delete-btn" (click)="onCancel()">Отменить поездку</button>
+    }
+    @if(showDeleteButton && drive.driveStatus != "PENDING_PAYMENT"){
+      <button class="delete-btn" (click)="onDelete()">Удалить из истории</button>
+    }
+    @if(drive.driveStatus == "PENDING_PAYMENT" && showPaymentButton){
+      <button class="edit-btn" (click)="onPayment()">Оплатить</button>
+      <label class="delete-btn">К оплате {{drive.totalAmount}} руб</label>
+    }
+    @if(showAdminInfo){
+      <button class="delete-btn" (click)="onUserInfo()">Информация о пользователе</button>
+    }
+  </div>
+</td>
+

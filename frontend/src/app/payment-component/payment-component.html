@@ -1,0 +1,11 @@
+<td class="td">Поездка от: {{ payment.drive.startRental | date: 'dd.MM.yyyy HH:mm' }}</td>
+<td class="td">{{ payment.drive.car.carBrand }} {{ payment.drive.car.carModel }} {{ payment.drive.car.carRegistrationNumber }}</td>
+<td class="td">{{ payment.drive.tariff.name }} </td>
+<td class="td">{{ payment.paymentAmount }}  Рублей</td>
+<td class="td">
+  <span class="method" [attr.data-method]="[`${payment.paymentMethod}`]"></span>
+</td>
+<td class="td">{{ payment.paymentDate | date:'dd.MM.yyyy HH:mm' }}</td>
+<td class="td">
+  <span class="status" [attr.data-status]="[`${payment.paymentStatus}`]"></span>
+</td>

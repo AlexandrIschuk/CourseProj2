@@ -1,0 +1,29 @@
+<div app-navbar-component (newTariff)="newTariff()"></div>
+<table class="tasks-table">
+  <thead>
+  <tr>
+    <th>ID Тарифа</th>
+    <th>Название</th>
+    <th>Стоимость минуты/километра</th>
+    <th>Тип расчета</th>
+    <th>Действия</th>
+  </tr>
+  </thead>
+  <tbody>
+    @if (tariffs$ | async; as tariffs){
+      @for (tariff of tariffs; track tariff.tariffId){
+        <tr app-tariff-component
+            [tariff]="tariff"
+            (delete)="deleteTariff($event)">
+        </tr>
+      }
+    }
+  </tbody>
+</table>
+@if (tariffs$ | async; as tariffs){
+  @if (tariffs.length == 0) {
+    <div class="alert alert-error">
+      Нет тарифов
+    </div>
+  }
+}

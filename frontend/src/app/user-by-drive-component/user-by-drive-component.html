@@ -1,0 +1,26 @@
+@if (user) {
+  <div class="login-container">
+    <h2 class="login-title">Информация о пользователе</h2>
+    <div class="info-group">
+      <label class="info-label">Email</label>
+      <div class="info-value">{{ user.email }}</div>
+    </div>
+    <div class="info-group">
+      <label class="info-label">Имя</label>
+      <div class="info-value">{{ user.firstname }}</div>
+    </div>
+    <div class="info-group">
+      <label class="info-label">Фамилия</label>
+      <div class="info-value">{{ user.lastname }}</div>
+    </div>
+    <div class="info-group">
+      <label class="info-label">Номер телефона</label>
+      <div class="info-value">{{ user.phoneNumber }}</div>
+    </div>
+    <div class="info-group">
+      <label class="info-label">Дата регистрации</label>
+      <div class="info-value">{{ user.registerDate | date:'dd.MM.yyyy' }}</div>
+    </div>
+  </div>
+}
+

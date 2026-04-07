@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="afa7b14f-1279-48f6-9cd4-8a099c204b82" name="Changes" comment="pre-final commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/entity/TariffType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/car-list-component/car-list-component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/car-list-component/car-list-component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/complete-drive/complete-drive.css" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/complete-drive/complete-drive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/complete-drive/complete-drive.html" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/complete-drive/complete-drive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/complete-drive/complete-drive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/complete-drive/complete-drive.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/drive-active-list-component/drive-active-list-component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/drive-active-list-component/drive-active-list-component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/drive-active-list-component/drive-active-list-component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/drive-active-list-component/drive-active-list-component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/drive-component/drive-component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/drive-component/drive-component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/drive-component/drive-component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/drive-component/drive-component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/drive-list-component/drive-list-component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/drive-list-component/drive-list-component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/interfaces/tariff.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/interfaces/tariff.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/login-component/login-component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/login-component/login-component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/navbar-component/navbar-component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/navbar-component/navbar-component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/new-tariff-component/new-tariff-component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/new-tariff-component/new-tariff-component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/new-tariff-component/new-tariff-component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/new-tariff-component/new-tariff-component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/registration-component/registration-component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/registration-component/registration-component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/services/drive.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/services/drive.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/start-drive-component/start-drive-component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/start-drive-component/start-drive-component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/start-drive-component/start-drive-component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/start-drive-component/start-drive-component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/tariff-component/tariff-component.css" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/tariff-component/tariff-component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/tariff-component/tariff-component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/tariff-component/tariff-component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarshFront/src/app/tariff-list-component/tariff-list-component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CarshFront/src/app/tariff-list-component/tariff-list-component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/controller/DriveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/controller/DriveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/controller/TariffController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/controller/TariffController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/dto/TariffDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/dto/TariffDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/entity/Drive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/entity/Drive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/entity/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/entity/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/entity/Tariff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/entity/Tariff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/mapping/TariffMappingUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/mapping/TariffMappingUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/repository/DriveRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/repository/DriveRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/service/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/service/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/service/DriveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/service/DriveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/service/TariffService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ssau/carshwebcourse/service/TariffService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Exception" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AlexandrIschuk&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AlexandrIschuk/CarshWebCourse.git&quot;,
+    &quot;accountId&quot;: &quot;714320d4-3bd3-4676-84d2-253cbcfab180&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/CarshFront/node_modules/rxjs/dist/types/internal/observable/throwError.d.ts" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="3AzCf4pFlZUSBKKJRYV8YZNAmQL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.CarshWebCourseApplication.executor": "Run",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.Angular CLI Server (CarshFront).executor": "Run",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "C:\\Users\\ischu\\Desktop\\CarshWebCourse\\CarshFront\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RunManager" selected="npm.Angular CLI Server (CarshFront)">
+    <configuration name="Angular Application (CarshFront)" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="CarshWebCourseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="JWT_SECRET" value="WXxsLH5hu1vSZM3AGIjiHdox5dptQp7PLBv1zdVucE0=" />
+      </envs>
+      <module name="CarshWebCourse" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.ssau.carshwebcourse.CarshWebCourseApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Angular CLI Server (CarshFront)" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/CarshFront/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="afa7b14f-1279-48f6-9cd4-8a099c204b82" name="Changes" comment="" />
+      <created>1773586114318</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1773586114318</updated>
+      <workItem from="1773586118390" duration="1923000" />
+      <workItem from="1773588072346" duration="11000" />
+      <workItem from="1773764938826" duration="8016000" />
+      <workItem from="1774339312592" duration="7731000" />
+      <workItem from="1774352763077" duration="20000" />
+      <workItem from="1774511110636" duration="5644000" />
+      <workItem from="1774525164588" duration="7003000" />
+      <workItem from="1774869597798" duration="9735000" />
+      <workItem from="1774886651061" duration="7041000" />
+      <workItem from="1774944967131" duration="13255000" />
+      <workItem from="1774963503086" duration="6817000" />
+      <workItem from="1775036709386" duration="7972000" />
+      <workItem from="1775135858512" duration="22000" />
+      <workItem from="1775150038016" duration="6977000" />
+      <workItem from="1775201584833" duration="1176000" />
+      <workItem from="1775202795342" duration="11758000" />
+      <workItem from="1775237642464" duration="4797000" />
+      <workItem from="1775298363571" duration="13647000" />
+      <workItem from="1775318736307" duration="82000" />
+      <workItem from="1775323437457" duration="1732000" />
+      <workItem from="1775381834138" duration="9985000" />
+      <workItem from="1775401268042" duration="6719000" />
+      <workItem from="1775497350886" duration="3196000" />
+      <workItem from="1775510315062" duration="12000" />
+      <workItem from="1775564201522" duration="659000" />
+      <workItem from="1775567719201" duration="516000" />
+      <workItem from="1775568510798" duration="481000" />
+      <workItem from="1775569187232" duration="137000" />
+    </task>
+    <task id="LOCAL-00001" summary="add controllers, mappings and post methods">
+      <option name="closed" value="true" />
+      <created>1774350159101</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1774350159101</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add jwt auth">
+      <option name="closed" value="true" />
+      <created>1774516740313</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1774516740313</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add get methods for car,tariff,drive, add put delete for drive, add login">
+      <option name="closed" value="true" />
+      <created>1774532168838</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1774532168838</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add front angular and login, register component">
+      <option name="closed" value="true" />
+      <created>1774881542460</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1774881542460</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add drive-list and auth">
+      <option name="closed" value="true" />
+      <created>1774896561080</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1774896561081</updated>
+    </task>
+    <task id="LOCAL-00006" summary="many add's and fixe's 31.03">
+      <option name="closed" value="true" />
+      <created>1774970327787</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1774970327787</updated>
+    </task>
+    <task id="LOCAL-00007" summary="many add startDrive comp and dialog">
+      <option name="closed" value="true" />
+      <created>1775161227534</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1775161227534</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add admin panel, guard.ts, car and tariff list">
+      <option name="closed" value="true" />
+      <created>1775242442331</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1775242442331</updated>
+    </task>
+    <task id="LOCAL-00009" summary="pre-final commit">
+      <option name="closed" value="true" />
+      <created>1775318771307</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1775318771307</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add controllers, mappings and post methods" />
+    <MESSAGE value="add jwt auth" />
+    <MESSAGE value="add get methods for car,tariff,drive, add put delete for drive, add login" />
+    <MESSAGE value="add front angular and login, register component" />
+    <MESSAGE value="add drive-list and auth" />
+    <MESSAGE value="many add's and fixe's 31.03" />
+    <MESSAGE value="many add startDrive comp and dialog" />
+    <MESSAGE value="add admin panel, guard.ts, car and tariff list" />
+    <MESSAGE value="pre-final commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="pre-final commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/CarshFront/src/app/new-tariff-component/new-tariff-component.ts</url>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

@@ -1,0 +1,33 @@
+<div class="login-container">
+
+
+  <form class="login-form" [formGroup]="newPaymentForm" (ngSubmit)="onSubmit()">
+    <h2 class="login-title">Оплатить</h2>
+
+    <div class="form-group">
+      <label for="username">Тип оплаты</label>
+      <select
+        id="taskStatus"
+        class="form-control"
+        formControlName="paymentMethod"
+        [class.is-invalid]="paymentMethod?.invalid && paymentMethod?.touched">
+        @for (method of methods; track method.value) {
+          <option [ngValue]="method.value">
+            {{ method.label }}
+          </option>
+        }
+      </select>
+      @if (paymentMethod?.invalid && paymentMethod?.touched){
+        <div class="validation-error">
+          @if (paymentMethod?.errors?.['required']){
+            <small>Ввод обязателен</small>
+          }
+        </div>
+      }
+    </div>
+    <button type="submit" class="login-btn" >
+      Оплатить
+    </button>
+  </form>
+</div>
+

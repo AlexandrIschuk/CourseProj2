@@ -1,0 +1,68 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-menu" >
+      <div class="nav-item-placeholder">
+        @if (router.url == "/drives") {
+          <button  class="nav-item" (click)="onStartDrive()">
+            <span class="nav-label">Начать поездку</span>
+          </button>
+        }
+        @if (router.url == "/cars") {
+          <button class="nav-item" (click)="onNewCar()">
+            <span class="nav-label">Добавить машину</span>
+          </button>
+        }
+        @if (router.url == "/tariffs") {
+          <button class="nav-item" (click)="onNewTariff()">
+            <span class="nav-label">Добавить тариф</span>
+          </button>
+        }
+      </div>
+      @if (!isAdmin()){
+        <a class="nav-item"
+           routerLink="/drives"
+           routerLinkActive="active">
+          <span class="nav-label">Активные поездки</span>
+        </a>
+
+        <a class="nav-item"
+           routerLink="/drives/history"
+           routerLinkActive="active">
+          <span class="nav-label">История поездок</span>
+        </a>
+
+        <a class="nav-item"
+           routerLink="/payment-history"
+           routerLinkActive="active">
+          <span class="nav-label">История платежей</span>
+        </a>
+      }
+
+      @if(isAdmin()){
+        <a class="nav-item"
+           routerLink="/drives/all"
+           routerLinkActive="active">
+          <span class="nav-label">Все поездки</span>
+        </a>
+
+        <a class="nav-item"
+           routerLink="/cars"
+           routerLinkActive="active">
+          <span class="nav-label">Список машин</span>
+        </a>
+
+        <a class="nav-item"
+           routerLink="/tariffs"
+           routerLinkActive="active">
+          <span class="nav-label">Список тарифов</span>
+        </a>
+      }
+      <a class="nav-item"
+         routerLink="/me"
+         routerLinkActive="active">
+        <span class="nav-label">Личный кабинет</span>
+      </a>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

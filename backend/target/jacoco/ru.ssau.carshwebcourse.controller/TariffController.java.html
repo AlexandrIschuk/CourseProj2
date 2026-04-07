@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TariffController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Study Backend</a> &gt; <a href="index.source.html" class="el_package">ru.ssau.carshwebcourse.controller</a> &gt; <span class="el_source">TariffController.java</span></div><h1>TariffController.java</h1><pre class="source lang-java linenums">package ru.ssau.carshwebcourse.controller;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+import ru.ssau.carshwebcourse.dto.CarDto;
+import ru.ssau.carshwebcourse.dto.TariffDto;
+import ru.ssau.carshwebcourse.service.TariffService;
+
+import java.util.List;
+
+@Controller
+@RequestMapping(&quot;/tariffs&quot;)
+public class TariffController {
+    private final TariffService tariffService;
+
+<span class="fc" id="L18">    public TariffController(TariffService tariffService){</span>
+<span class="fc" id="L19">        this.tariffService = tariffService;</span>
+<span class="fc" id="L20">    }</span>
+
+    @PostMapping
+    public ResponseEntity&lt;TariffDto&gt; newTariff(@RequestBody TariffDto tariffDto){
+<span class="nc" id="L24">        return new ResponseEntity&lt;&gt;(tariffService.newTariff(tariffDto), HttpStatus.CREATED);</span>
+    }
+    @GetMapping
+    @ResponseBody
+    public List&lt;TariffDto&gt; findAll(){
+<span class="nc" id="L29">        return tariffService.findAllTariffs();</span>
+    }
+
+    @GetMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;TariffDto&gt; getTariffById(@PathVariable Long id){
+<span class="nc" id="L34">        return new ResponseEntity&lt;&gt;(tariffService.getTariffById(id), HttpStatus.OK);</span>
+    }
+
+
+    @DeleteMapping(&quot;/{id}&quot;)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteTariff(@PathVariable Long id){
+<span class="nc" id="L41">        tariffService.deleteTariff(id);</span>
+<span class="nc" id="L42">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

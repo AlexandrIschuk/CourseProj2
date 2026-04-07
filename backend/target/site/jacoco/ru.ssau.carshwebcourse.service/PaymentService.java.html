@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PaymentService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Study Backend</a> &gt; <a href="index.source.html" class="el_package">ru.ssau.carshwebcourse.service</a> &gt; <span class="el_source">PaymentService.java</span></div><h1>PaymentService.java</h1><pre class="source lang-java linenums">package ru.ssau.carshwebcourse.service;
+
+import org.springframework.stereotype.Service;
+import ru.ssau.carshwebcourse.dto.PaymentDto;
+import ru.ssau.carshwebcourse.entity.PaymentStatus;
+import ru.ssau.carshwebcourse.mapping.PaymentMappingUtils;
+import ru.ssau.carshwebcourse.repository.PaymentRepository;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class PaymentService {
+    private final PaymentRepository paymentRepository;
+    private final PaymentMappingUtils paymentMappingUtils;
+    private final DriveService driveService;
+
+<span class="fc" id="L19">    public PaymentService(DriveService driveService,PaymentRepository paymentRepository,PaymentMappingUtils paymentMappingUtils){</span>
+<span class="fc" id="L20">        this.paymentMappingUtils = paymentMappingUtils;</span>
+<span class="fc" id="L21">        this.paymentRepository = paymentRepository;</span>
+<span class="fc" id="L22">        this.driveService = driveService;</span>
+<span class="fc" id="L23">    }</span>
+
+    public PaymentDto newPayment(PaymentDto paymentDto){
+<span class="nc" id="L26">        paymentDto.setPaymentAmount(paymentDto.getDrive().getTotalAmount());</span>
+<span class="nc" id="L27">        paymentDto.setPaymentDate(LocalDateTime.now());</span>
+<span class="nc" id="L28">        paymentDto.setPaymentStatus(PaymentStatus.SUCCESS);</span>
+<span class="nc" id="L29">        driveService.completeDrive(paymentDto.getDrive().getDriveId());</span>
+<span class="nc" id="L30">        paymentRepository.save(paymentMappingUtils.mapToPaymentEntity(paymentDto));</span>
+<span class="nc" id="L31">        return paymentDto;</span>
+    }
+
+    public List&lt;PaymentDto&gt; getAllPaymentToUser(Long userId){
+<span class="nc" id="L35">        return paymentRepository.getPaymentsByDrive_User_UserId(userId).stream().map(paymentMappingUtils::mapToPaymentDto).toList();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

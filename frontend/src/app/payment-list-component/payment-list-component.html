@@ -1,0 +1,32 @@
+<div app-navbar-component></div>
+<table class="tasks-table">
+  <thead>
+  <tr>
+    <th>Поездка</th>
+    <th>Автомобиль</th>
+    <th>Тариф</th>
+    <th>Стоимость</th>
+    <th>Тип оплаты</th>
+    <th>Дата оплаты</th>
+    <th>Статус</th>
+  </tr>
+  </thead>
+  <tbody>
+    @if (payments$ | async; as payments){
+      @for (payment of payments; track payment.paymentId){
+        <tr app-payment-component
+            [payment]="payment"
+            >
+        </tr>
+      }
+    }
+  </tbody>
+</table>
+@if (payments$ | async; as payments){
+  @if (payments.length == 0) {
+    <div class="alert alert-error">
+      История платежей пуста
+    </div>
+  }
+}
+

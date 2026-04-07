@@ -1,0 +1,93 @@
+<div class="login-container">
+
+
+  <form class="login-form" [formGroup]="newCarForm" (ngSubmit)="onSubmit()">
+    <h2 class="login-title">Добавить автомобиль</h2>
+
+    <div class="form-group">
+      <label for="username">Марка</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        class="form-control"
+        formControlName="carBrand"
+        placeholder="Марка"
+        [class.is-invalid]="carBrand?.invalid && carBrand?.touched">
+      @if (carBrand?.invalid && carBrand?.touched){
+        <div class="validation-error">
+          @if (carBrand?.errors?.['required']){
+            <small>Ввод обязателен</small>
+          }
+        </div>
+      }
+
+      <label for="username">Модель</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        class="form-control"
+        formControlName="carModel"
+        placeholder="Модель"
+        [class.is-invalid]="carModel?.invalid && carModel?.touched">
+      @if (carModel?.invalid && carModel?.touched){
+        <div class="validation-error">
+          @if (carModel?.errors?.['required']){
+            <small>Ввод обязателен</small>
+          }
+        </div>
+      }
+
+      <label for="username">Регистрационный номер</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        class="form-control"
+        formControlName="carRegistrationNumber"
+        [patterns]="customPatterns"
+        mask="X000XX000"
+        placeholder="A000AA000"
+
+        [class.is-invalid]="carRegistrationNumber?.invalid && carRegistrationNumber?.touched">
+      @if (carRegistrationNumber?.invalid && carRegistrationNumber?.touched){
+        <div class="validation-error">
+          @if (carRegistrationNumber?.errors?.['required']){
+            <small>Ввод обязателен</small>
+          }
+        </div>
+      }
+
+      <label for="username">Год выпуска</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        class="form-control"
+        formControlName="year"
+        mask="000"
+        prefix="2"
+        [dropSpecialCharacters] = false
+        placeholder="Год выпуска"
+        [class.is-invalid]="year?.invalid && year?.touched">
+      @if (year?.invalid && year?.touched){
+        <div class="validation-error">
+          @if (year?.errors?.['required']){
+            <small>Ввод обязателен</small>
+          }
+        </div>
+      }
+    </div>
+    @if (errorMessage) {
+      <div class="alert alert-error">
+        {{ errorMessage }}
+        <button type="button" class="alert-close" (click)="errorMessage = ''">×</button>
+      </div>
+    }
+    <button type="submit" class="login-btn" >
+      Добавить
+    </button>
+  </form>
+</div>
+

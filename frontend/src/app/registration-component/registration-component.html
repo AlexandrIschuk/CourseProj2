@@ -1,0 +1,158 @@
+<div class="login-container">
+  <form class="login-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <h2 class="login-title">Регистрация</h2>
+    <div class="form-group">
+      <label for="username">Email</label>
+      <input
+        type="text"
+        id="username"
+        class="form-control"
+        formControlName="email"
+        placeholder="Введите логин"
+        [class.is-invalid]="email?.invalid && email?.touched">
+      @if (email?.invalid && email?.touched){
+        <div class="validation-error">
+          @if (email?.errors?.['required']){
+            <small>Email обязателен</small>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="username">Номер телефона</label>
+      <input
+        type="text"
+        id="username"
+        class="form-control"
+        formControlName="phoneNumber"
+        mask="(000) 000-0000"
+        prefix="+7 "
+        placeholder="Введите номер телефона"
+        [class.is-invalid]="phoneNumber?.invalid && phoneNumber?.touched">
+      @if (phoneNumber?.invalid && phoneNumber?.touched){
+        <div class="validation-error">
+          @if (phoneNumber?.errors?.['required']){
+            <small>Номер телефона обязателен</small>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="username">Имя</label>
+      <input
+        type="text"
+        id="username"
+        class="form-control"
+        formControlName="firstname"
+        placeholder="Введите имя"
+        [class.is-invalid]="firstname?.invalid && firstname?.touched">
+      @if (firstname?.invalid && firstname?.touched){
+        <div class="validation-error">
+          @if (firstname?.errors?.['required']){
+            <small>Имя обязательно</small>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="username">Фамилия</label>
+      <input
+        type="text"
+        id="username"
+        class="form-control"
+        formControlName="lastname"
+        placeholder="Введите фамилия"
+        [class.is-invalid]="lastname?.invalid && lastname?.touched">
+      @if (lastname?.invalid && lastname?.touched){
+        <div class="validation-error">
+          @if (lastname?.errors?.['required']){
+            <small>Фамилия обязательна</small>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="username">Номер ВУ</label>
+      <input
+        type="text"
+        id="username"
+        class="form-control"
+        formControlName="drvLicenseNumber"
+        placeholder="Введите номер ВУ"
+        mask="00-00-000000"
+        [dropSpecialCharacters] = false
+        [class.is-invalid]="drvLicenseNumber?.invalid && drvLicenseNumber?.touched">
+      @if (drvLicenseNumber?.invalid && drvLicenseNumber?.touched){
+        <div class="validation-error">
+          @if (drvLicenseNumber?.errors?.['required']){
+            <small>Номер водительского удостоверения обязателен</small>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="password">Пароль</label>
+      <div class="password-wrapper">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          formControlName="password"
+          placeholder="Введите пароль"
+          [class.is-invalid]="password?.invalid && password?.touched">
+        @if (password?.invalid && password?.touched){
+          <div class="validation-error">
+            @if (password?.errors?.['required']){
+              <small>Пароль обязателен</small>
+            }
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Подтверждение пароля</label>
+      <div class="password-wrapper">
+        <input
+          type="password"
+          id="confirmPassword"
+          class="form-control"
+          formControlName="confirmPassword"
+          placeholder="Подтвердите пароль"
+          [class.is-invalid]="confirmPassword?.invalid && confirmPassword?.touched">
+        @if (confirmPassword?.invalid && confirmPassword?.touched){
+          <div class="validation-error">
+            @if (confirmPassword?.errors?.['required']){
+              <small>Подтверждение пароля обязательно</small>
+            }
+          </div>
+        }
+      </div>
+    </div>
+    @if (errorMessage) {
+      <div  class="alert alert-error">
+        {{ errorMessage }}
+        <button type="button" class="alert-close" (click)="errorMessage = ''">×</button>
+      </div>
+    }
+    @if (successMessage) {
+      <div class="alert alert-success">
+        {{ successMessage }}
+      </div>
+    }
+    <div>
+      <button type="submit" class="login-btn">
+        <span>Зарегистрироваться</span>
+      </button>
+      <button class="login-btn" (click)="onCancel()">
+        Отмена
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,11 @@
+<td class="td">{{ tariff.tariffId }}</td>
+<td class="td">{{ tariff.name }}</td>
+<td class="td">{{ tariff.price }}</td>
+<td class="td">
+  <span class="status" [attr.data-status]="[`${ tariff.tariffType }`]"></span>
+</td>
+<td class="td">
+  <div class="actions">
+    <button class="delete-btn" (click)="onDelete()">Удалить тариф</button>
+  </div>
+</td>
