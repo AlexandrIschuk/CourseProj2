@@ -1,10 +1,12 @@
 package ru.ssau.carshwebcourse.service;
 
 import lombok.Setter;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 import ru.ssau.carshwebcourse.dto.CarDto;
 import ru.ssau.carshwebcourse.dto.DriveDto;
 import ru.ssau.carshwebcourse.entity.*;
+import ru.ssau.carshwebcourse.exceptionHandler.NotFoundException;
 import ru.ssau.carshwebcourse.mapping.CarMappingUtils;
 import ru.ssau.carshwebcourse.repository.CarRepository;
 
@@ -30,7 +32,8 @@ public class CarService {
     }
 
     public CarDto getCarById(Long id){
-        return carMappingUtils.mapToCarDto(carRepository.getCarByCarId(id));
+        Car entity = carRepository.findById(id).orElseThrow(() -> new NotFoundException("Car not found"));
+        return carMappingUtils.mapToCarDto(entity);
     }
 
     public List<CarDto> findFreeCars(){
@@ -39,7 +42,7 @@ public class CarService {
     }
 
     public CarDto updateCarStatus(Long id, CarDto car){
-        Car car1 = carRepository.findById(id).orElseThrow();
+        Car car1 = carRepository.findById(id).orElseThrow(() -> new NotFoundException("Car not found"));
         car1.setCarStatus(car.getCarStatus());
         carRepository.save(car1);
         return carMappingUtils.mapToCarDto(car1);

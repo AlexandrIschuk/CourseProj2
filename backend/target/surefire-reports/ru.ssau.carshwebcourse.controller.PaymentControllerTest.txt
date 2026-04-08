@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: ru.ssau.carshwebcourse.controller.PaymentControllerTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.042 s <<< FAILURE! -- in ru.ssau.carshwebcourse.controller.PaymentControllerTest
+ru.ssau.carshwebcourse.controller.PaymentControllerTest.newPaymentTest -- Time elapsed: 0.031 s <<< ERROR!
+org.hibernate.LazyInitializationException: Could not initialize proxy [ru.ssau.carshwebcourse.entity.Car#14] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:170)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:323)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:42)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:95)
+	at ru.ssau.carshwebcourse.entity.Car$HibernateProxy.setCarStatus(Unknown Source)
+	at ru.ssau.carshwebcourse.service.DriveService.completeDrive(DriveService.java:97)
+	at ru.ssau.carshwebcourse.service.PaymentService.newPayment(PaymentService.java:29)
+	at ru.ssau.carshwebcourse.controller.PaymentController.newPayment(PaymentController.java:30)
+	at ru.ssau.carshwebcourse.controller.PaymentControllerTest.newPaymentTest(PaymentControllerTest.java:57)
+

@@ -19,7 +19,6 @@ import ru.ssau.carshwebcourse.exceptionHandler.TokenCreatedTimeException;
 import ru.ssau.carshwebcourse.service.CustomUserDetailsService;
 import ru.ssau.carshwebcourse.service.TokenService;
 
-import javax.security.sasl.AuthenticationException;
 import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;

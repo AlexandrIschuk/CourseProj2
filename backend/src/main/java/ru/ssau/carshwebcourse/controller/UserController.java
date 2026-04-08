@@ -24,12 +24,12 @@ public class UserController {
 
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
-    public void UserRegister(@Valid @RequestBody UserDto userDto){
-        customUserDetailsService.UserRegister(userDto);
+    public void userRegister(@Valid @RequestBody UserDto userDto){
+        customUserDetailsService.userRegister(userDto);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserDto> UserRegister(@PathVariable Long id){
+    public ResponseEntity<UserDto> getUserByUserId(@PathVariable Long id){
         return new ResponseEntity<>(customUserDetailsService.getUserByUserId(id), HttpStatus.OK);
     }
 

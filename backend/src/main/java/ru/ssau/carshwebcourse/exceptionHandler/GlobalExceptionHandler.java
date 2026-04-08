@@ -21,6 +21,12 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ошибка: " + e.getFieldErrors().stream().map(FieldError::getDefaultMessage).collect(Collectors.toSet()));
     }
 
+    @ExceptionHandler(NotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<String> notFoundException(NotFoundException e){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Ошибка: " + e.getMessage());
+    }
+
     @ExceptionHandler(PSQLException.class)
     @ResponseStatus(HttpStatus.CONFLICT)
     public ResponseEntity<String> noSuchElementException(PSQLException e){

@@ -1,1 +1,8 @@
+ru\ssau\carshwebcourse\controller\CarControllerTest.class
+ru\ssau\carshwebcourse\service\TariffServiceTest.class
+ru\ssau\carshwebcourse\controller\TariffControllerTest.class
 ru\ssau\carshwebcourse\CarshWebCourseApplicationTests.class
+ru\ssau\carshwebcourse\controller\UserControllerTest.class
+ru\ssau\carshwebcourse\service\CustomUserDetailsServiceTest.class
+ru\ssau\carshwebcourse\controller\PaymentControllerTest.class
+ru\ssau\carshwebcourse\service\CarServiceTest.class

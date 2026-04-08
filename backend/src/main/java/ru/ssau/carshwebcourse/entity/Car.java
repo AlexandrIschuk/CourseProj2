@@ -24,8 +24,8 @@ public class Car {
     @Column(name = "car_registration_number", unique = true)
     private String carRegistrationNumber;
 
-    @Column(name = "year")
-    private int year;
+    @Column(name = "car_year")
+    private int carYear;
 
     @Column(name = "car_status")
     @Enumerated(EnumType.STRING)

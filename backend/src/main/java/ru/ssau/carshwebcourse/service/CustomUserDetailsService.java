@@ -42,7 +42,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
 
-    public void UserRegister(UserDto userDto){
+    public void userRegister(UserDto userDto){
         userDto.setPhoneNumber("+7" + userDto.getPhoneNumber());
         User user = userMappingUtils.mapToUserEntity(userDto);
         user.setPassword(passwordEncoder.encode(user.getPassword()));

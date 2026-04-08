@@ -4,6 +4,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.stereotype.Service;
 import ru.ssau.carshwebcourse.dto.TariffDto;
 import ru.ssau.carshwebcourse.entity.Tariff;
+import ru.ssau.carshwebcourse.exceptionHandler.NotFoundException;
 import ru.ssau.carshwebcourse.mapping.TariffMappingUtils;
 import ru.ssau.carshwebcourse.repository.TariffRepository;
 
@@ -14,19 +15,19 @@ import java.util.stream.Collectors;
 public class TariffService {
     private final TariffRepository tariffRepository;
     private final TariffMappingUtils tariffMappingUtils;
-    private final ApplicationArguments applicationArguments;
 
-    public TariffService(TariffRepository tariffRepository, TariffMappingUtils tariffMappingUtils, ApplicationArguments applicationArguments){
+
+    public TariffService(TariffRepository tariffRepository, TariffMappingUtils tariffMappingUtils){
         this.tariffRepository = tariffRepository;
         this.tariffMappingUtils = tariffMappingUtils;
-        this.applicationArguments = applicationArguments;
+
     }
     public TariffDto newTariff(TariffDto tariffDto){
         return tariffMappingUtils.mapTariffToDto(tariffRepository.save(tariffMappingUtils.mapTariffToEntity(tariffDto)));
     }
 
     public  TariffDto getTariffById(Long id){
-        return tariffMappingUtils.mapTariffToDto(tariffRepository.getTariffByTariffId(id));
+        return tariffMappingUtils.mapTariffToDto(tariffRepository.findById(id).orElseThrow(() -> new NotFoundException("Tariff not found")));
     }
 
     public List<TariffDto> findAllTariffs(){

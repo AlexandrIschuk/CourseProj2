@@ -27,6 +27,7 @@ C:\Users\ischu\Documents\CourseProj\backend\src\main\java\ru\ssau\carshwebcourse
 C:\Users\ischu\Documents\CourseProj\backend\src\main\java\ru\ssau\carshwebcourse\exceptionHandler\CarIsNotFreeException.java
 C:\Users\ischu\Documents\CourseProj\backend\src\main\java\ru\ssau\carshwebcourse\exceptionHandler\GlobalExceptionHandler.java
 C:\Users\ischu\Documents\CourseProj\backend\src\main\java\ru\ssau\carshwebcourse\exceptionHandler\InvalidTokenException.java
+C:\Users\ischu\Documents\CourseProj\backend\src\main\java\ru\ssau\carshwebcourse\exceptionHandler\NotFoundException.java
 C:\Users\ischu\Documents\CourseProj\backend\src\main\java\ru\ssau\carshwebcourse\exceptionHandler\TokenCreatedTimeException.java
 C:\Users\ischu\Documents\CourseProj\backend\src\main\java\ru\ssau\carshwebcourse\filters\JwtFilter.java
 C:\Users\ischu\Documents\CourseProj\backend\src\main\java\ru\ssau\carshwebcourse\mapping\CarMappingUtils.java
@@ -37,6 +38,7 @@ C:\Users\ischu\Documents\CourseProj\backend\src\main\java\ru\ssau\carshwebcourse
 C:\Users\ischu\Documents\CourseProj\backend\src\main\java\ru\ssau\carshwebcourse\repository\CarRepository.java
 C:\Users\ischu\Documents\CourseProj\backend\src\main\java\ru\ssau\carshwebcourse\repository\DriveRepository.java
 C:\Users\ischu\Documents\CourseProj\backend\src\main\java\ru\ssau\carshwebcourse\repository\PaymentRepository.java
+C:\Users\ischu\Documents\CourseProj\backend\src\main\java\ru\ssau\carshwebcourse\repository\RoleRepository.java
 C:\Users\ischu\Documents\CourseProj\backend\src\main\java\ru\ssau\carshwebcourse\repository\TariffRepository.java
 C:\Users\ischu\Documents\CourseProj\backend\src\main\java\ru\ssau\carshwebcourse\repository\UserRepository.java
 C:\Users\ischu\Documents\CourseProj\backend\src\main\java\ru\ssau\carshwebcourse\service\CarService.java

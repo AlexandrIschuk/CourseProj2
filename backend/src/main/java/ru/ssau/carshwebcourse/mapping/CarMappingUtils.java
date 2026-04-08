@@ -12,7 +12,7 @@ public class CarMappingUtils {
         carDto.setCarBrand(entity.getCarBrand());
         carDto.setCarModel(entity.getCarModel());
         carDto.setCarRegistrationNumber(entity.getCarRegistrationNumber());
-        carDto.setYear(entity.getYear());
+        carDto.setYear(entity.getCarYear());
         carDto.setCarStatus(entity.getCarStatus());
         return carDto;
     }
@@ -23,7 +23,7 @@ public class CarMappingUtils {
         entity.setCarBrand(carDto.getCarBrand());
         entity.setCarModel(carDto.getCarModel());
         entity.setCarRegistrationNumber(carDto.getCarRegistrationNumber());
-        entity.setYear(carDto.getYear());
+        entity.setCarYear(carDto.getYear());
         entity.setCarStatus(carDto.getCarStatus());
         return entity;
     }

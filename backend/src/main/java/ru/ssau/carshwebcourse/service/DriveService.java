@@ -7,6 +7,7 @@ import ru.ssau.carshwebcourse.dto.DriveDto;
 import ru.ssau.carshwebcourse.dto.UserDto;
 import ru.ssau.carshwebcourse.entity.*;
 import ru.ssau.carshwebcourse.exceptionHandler.CarIsNotFreeException;
+import ru.ssau.carshwebcourse.exceptionHandler.NotFoundException;
 import ru.ssau.carshwebcourse.mapping.DriveMappingUtils;
 import ru.ssau.carshwebcourse.mapping.UserMappingUtils;
 import ru.ssau.carshwebcourse.repository.CarRepository;
@@ -40,7 +41,7 @@ public class DriveService {
             throw new IllegalStateException("Нельзя начать больше 1 поездки");
         }
         Drive drive1 = driveMappingUtils.mapToDriveEntity(drive);
-        Car car = carRepository.getCarByCarId(drive1.getCar().getCarId());
+        Car car = carRepository.findById(drive1.getCar().getCarId()).orElseThrow(() -> new NotFoundException("Car not found"));
         if(!car.getCarStatus().equals(CarStatus.FREE)){
             throw new CarIsNotFreeException("Машина занята!");
         }
