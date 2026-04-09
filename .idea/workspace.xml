@@ -5,277 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="348b5cae-5dde-494e-b762-17cc714a2783" name="Changes" comment="intial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/exceptionHandler/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/repository/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/ru/ssau/carshwebcourse/controller/CarControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/ru/ssau/carshwebcourse/controller/PaymentControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/ru/ssau/carshwebcourse/controller/TariffControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/ru/ssau/carshwebcourse/service/CarServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/ru/ssau/carshwebcourse/service/CustomUserDetailsServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/ru/ssau/carshwebcourse/service/TariffServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/resources/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/ru/ssau/carshwebcourse/service/DriveServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/ru/ssau/carshwebcourse/service/PaymentServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/entity/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/entity/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/exceptionHandler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/exceptionHandler/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/filters/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/filters/JwtFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/mapping/CarMappingUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/mapping/CarMappingUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/repository/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/repository/CarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/repository/TariffRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/repository/TariffRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/service/CarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/service/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/service/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/db/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db/db.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/service/DriveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/service/DriveService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/service/TariffService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/ssau/carshwebcourse/service/TariffService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/entity/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/entity/Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/exceptionHandler/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/exceptionHandler/GlobalExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/filters/JwtFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/filters/JwtFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/mapping/CarMappingUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/mapping/CarMappingUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/repository/CarRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/repository/CarRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/service/CarService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/service/CarService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/service/CustomUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/service/CustomUserDetailsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/ru/ssau/carshwebcourse/controller/PaymentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/ru/ssau/carshwebcourse/controller/PaymentControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/service/DriveService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/service/DriveService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/service/TariffService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/ru/ssau/carshwebcourse/service/TariffService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/static/main-ZZU4Z43J.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/static/main-ZZU4Z43J.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/jacoco.exec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/branchfc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/branchnc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/branchpc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/bundle.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/class.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/down.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/greenbar.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/group.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/method.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/package.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/prettify.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/prettify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/redbar.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/report.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/report.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/session.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/sort.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/sort.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/source.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-resources/up.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco-sessions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/jacoco.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.config/SecurityConfig.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.config/SecurityConfig.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.config/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.config/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.controller/AuthController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.controller/AuthController.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.controller/CarController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.controller/CarController.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.controller/DriveController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.controller/DriveController.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.controller/PaymentController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.controller/PaymentController.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.controller/TariffController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.controller/TariffController.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.controller/UserController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.controller/UserController.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.controller/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.controller/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.dto/CarDto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.dto/CarDto.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.dto/DriveDto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.dto/DriveDto.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.dto/PaymentDto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.dto/PaymentDto.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.dto/TariffDto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.dto/TariffDto.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.dto/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.dto/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.entity/CarStatus.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.entity/CarStatus.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.entity/DriveStatus.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.entity/DriveStatus.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.entity/PaymentMethod.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.entity/PaymentMethod.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.entity/PaymentStatus.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.entity/PaymentStatus.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.entity/Role.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.entity/Role.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.entity/TariffType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.entity/TariffType.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.entity/UserRole.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.entity/UserRole.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.entity/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.entity/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.exceptionHandler/CarIsNotFreeException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.exceptionHandler/CarIsNotFreeException.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.exceptionHandler/GlobalExceptionHandler.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.exceptionHandler/GlobalExceptionHandler.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.exceptionHandler/InvalidTokenException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.exceptionHandler/InvalidTokenException.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.exceptionHandler/TokenCreatedTimeException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.exceptionHandler/TokenCreatedTimeException.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.exceptionHandler/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.exceptionHandler/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.filters/JwtFilter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.filters/JwtFilter.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.filters/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.filters/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.mapping/CarMappingUtils.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.mapping/CarMappingUtils.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.mapping/DriveMappingUtils.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.mapping/DriveMappingUtils.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.mapping/PaymentMappingUtils.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.mapping/PaymentMappingUtils.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.mapping/TariffMappingUtils.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.mapping/TariffMappingUtils.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.mapping/UserMappingUtils.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.mapping/UserMappingUtils.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.mapping/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.mapping/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.service/CarService.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.service/CarService.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.service/CustomUserDetailsService.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.service/CustomUserDetailsService.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.service/DriveService.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.service/DriveService.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.service/PaymentService.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.service/PaymentService.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.service/TariffService.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.service/TariffService.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.service/TokenService$1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.service/TokenService.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.service/TokenService.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.service/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse.service/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse/CarshWebCourseApplication.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse/CarshWebCourseApplication.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/jacoco/ru.ssau.carshwebcourse/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/maven-archiver/pom.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/branchfc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/branchnc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/branchpc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/bundle.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/class.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/down.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/greenbar.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/group.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/method.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/package.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/prettify.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/prettify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/redbar.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/report.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/report.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/session.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/sort.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/sort.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/source.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-resources/up.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco-sessions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/jacoco.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.config/SecurityConfig.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.config/SecurityConfig.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.config/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.config/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.controller/AuthController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.controller/AuthController.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.controller/CarController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.controller/CarController.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.controller/DriveController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.controller/DriveController.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.controller/PaymentController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.controller/PaymentController.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.controller/TariffController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.controller/TariffController.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.controller/UserController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.controller/UserController.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.controller/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.controller/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.dto/CarDto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.dto/CarDto.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.dto/DriveDto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.dto/DriveDto.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.dto/PaymentDto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.dto/PaymentDto.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.dto/TariffDto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.dto/TariffDto.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.dto/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.dto/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.entity/CarStatus.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.entity/CarStatus.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.entity/DriveStatus.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.entity/DriveStatus.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.entity/PaymentMethod.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.entity/PaymentMethod.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.entity/PaymentStatus.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.entity/PaymentStatus.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.entity/Role.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.entity/Role.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.entity/TariffType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.entity/TariffType.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.entity/UserRole.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.entity/UserRole.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.entity/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.entity/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.exceptionHandler/CarIsNotFreeException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.exceptionHandler/CarIsNotFreeException.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.exceptionHandler/GlobalExceptionHandler.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.exceptionHandler/GlobalExceptionHandler.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.exceptionHandler/InvalidTokenException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.exceptionHandler/InvalidTokenException.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.exceptionHandler/TokenCreatedTimeException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.exceptionHandler/TokenCreatedTimeException.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.exceptionHandler/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.exceptionHandler/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.filters/JwtFilter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.filters/JwtFilter.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.filters/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.filters/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.mapping/CarMappingUtils.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.mapping/CarMappingUtils.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.mapping/DriveMappingUtils.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.mapping/DriveMappingUtils.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.mapping/PaymentMappingUtils.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.mapping/PaymentMappingUtils.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.mapping/TariffMappingUtils.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.mapping/TariffMappingUtils.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.mapping/UserMappingUtils.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.mapping/UserMappingUtils.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.mapping/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.mapping/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.service/CarService.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.service/CarService.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.service/CustomUserDetailsService.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.service/CustomUserDetailsService.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.service/DriveService.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.service/DriveService.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.service/PaymentService.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.service/PaymentService.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.service/TariffService.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.service/TariffService.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.service/TokenService$1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.service/TokenService.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.service/TokenService.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.service/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse.service/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse/CarshWebCourseApplication.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse/CarshWebCourseApplication.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/site/jacoco/ru.ssau.carshwebcourse/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/study-backend-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/study-backend-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/surefire-reports/TEST-ru.ssau.carshwebcourse.CarshWebCourseApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/surefire-reports/TEST-ru.ssau.carshwebcourse.CarshWebCourseApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/surefire-reports/TEST-ru.ssau.carshwebcourse.controller.CarControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/surefire-reports/TEST-ru.ssau.carshwebcourse.controller.CarControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/surefire-reports/TEST-ru.ssau.carshwebcourse.controller.PaymentControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/surefire-reports/TEST-ru.ssau.carshwebcourse.controller.TariffControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/surefire-reports/TEST-ru.ssau.carshwebcourse.controller.TariffControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/surefire-reports/TEST-ru.ssau.carshwebcourse.controller.UserControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/surefire-reports/TEST-ru.ssau.carshwebcourse.controller.UserControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/surefire-reports/TEST-ru.ssau.carshwebcourse.service.CarServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/surefire-reports/TEST-ru.ssau.carshwebcourse.service.CarServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/surefire-reports/TEST-ru.ssau.carshwebcourse.service.CustomUserDetailsServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/surefire-reports/TEST-ru.ssau.carshwebcourse.service.CustomUserDetailsServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/surefire-reports/TEST-ru.ssau.carshwebcourse.service.TariffServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/surefire-reports/TEST-ru.ssau.carshwebcourse.service.TariffServiceTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/surefire-reports/ru.ssau.carshwebcourse.CarshWebCourseApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/surefire-reports/ru.ssau.carshwebcourse.CarshWebCourseApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/surefire-reports/ru.ssau.carshwebcourse.controller.CarControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/surefire-reports/ru.ssau.carshwebcourse.controller.CarControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/surefire-reports/ru.ssau.carshwebcourse.controller.PaymentControllerTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/surefire-reports/ru.ssau.carshwebcourse.controller.TariffControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/surefire-reports/ru.ssau.carshwebcourse.controller.TariffControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/surefire-reports/ru.ssau.carshwebcourse.controller.UserControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/surefire-reports/ru.ssau.carshwebcourse.controller.UserControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/surefire-reports/ru.ssau.carshwebcourse.service.CarServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/surefire-reports/ru.ssau.carshwebcourse.service.CarServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/surefire-reports/ru.ssau.carshwebcourse.service.CustomUserDetailsServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/surefire-reports/ru.ssau.carshwebcourse.service.CustomUserDetailsServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/surefire-reports/ru.ssau.carshwebcourse.service.TariffServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/surefire-reports/ru.ssau.carshwebcourse.service.TariffServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/test-classes/ru/ssau/carshwebcourse/controller/PaymentControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/test-classes/ru/ssau/carshwebcourse/controller/PaymentControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.angular/cache/21.2.5/CarshFront/.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.angular/cache/21.2.5/CarshFront/.tsbuildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.angular/cache/21.2.5/CarshFront/angular-compiler.db" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.angular/cache/21.2.5/CarshFront/angular-compiler.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/frontend/3rdpartylicenses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/frontend/3rdpartylicenses.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/frontend/browser/main-ZZU4Z43J.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/frontend/browser/main-ZZU4Z43J.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/frontend/prerendered-routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/frontend/prerendered-routes.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,8 +56,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Exception" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -303,7 +73,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/AlexandrIschuk/CourseProj2.git&quot;,
-    &quot;accountId&quot;: &quot;714320d4-3bd3-4676-84d2-253cbcfab180&quot;
+    &quot;accountId&quot;: &quot;c9b6ec06-e239-439c-9fcb-29db8adfbeca&quot;
   }
 }</component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -323,6 +93,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Maven.CourseProj [clean,install].executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
@@ -336,15 +107,25 @@
     &quot;Spring Boot.CarshWebCourseApplication.executor&quot;: &quot;Run&quot;,
     &quot;credentialsType com.jetbrains.nodejs.remote.NodeJSCreateRemoteSdkForm&quot;: &quot;Docker&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/ischu/Documents/CourseProj/backend/src/test/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ischu\\Documents\\CourseProj\\frontend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -352,9 +133,41 @@
       <recent name="C:\Users\ischu\Documents\CourseProj\backend\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Maven.CourseProj [clean,install]">
+    <configuration name="CourseProj [clean,install]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <configuration name="CarshWebCourseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/Java/jdk-24" />
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <envs>
         <env name="JWT_SECRET" value="SFSDGFLKNIOW$NJFWFNRKJGNWREG" />
       </envs>
@@ -364,6 +177,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Maven.CourseProj [clean,install]" />
+      <item itemvalue="Spring Boot.CarshWebCourseApplication" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -393,6 +210,9 @@
       <workItem from="1775656562657" duration="2728000" />
       <workItem from="1775660033232" duration="1017000" />
       <workItem from="1775661223020" duration="169000" />
+      <workItem from="1775733430111" duration="102000" />
+      <workItem from="1775733636365" duration="540000" />
+      <workItem from="1775757510123" duration="13092000" />
     </task>
     <task id="LOCAL-00001" summary="intial commit">
       <option name="closed" value="true" />

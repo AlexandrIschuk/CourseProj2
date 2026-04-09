@@ -16,7 +16,7 @@ CREATE TABLE car
     car_brand               varchar(20),
     car_model               varchar(20),
     car_registration_number varchar(20) unique,
-    year                    int,
+    car_year                    int,
     car_status              varchar(10)
 );
 

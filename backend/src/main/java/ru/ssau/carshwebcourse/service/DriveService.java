@@ -96,7 +96,6 @@ public class DriveService {
         drive1.setDriveStatus(DriveStatus.COMPLETED);
         drive1.getCar().setCarStatus(CarStatus.FREE);
         driveRepository.save(drive1);
-        //return driveMappingUtils.mapToDriveDto(drive1);
     }
 
     public DriveDto cancelDrive(Long id){
