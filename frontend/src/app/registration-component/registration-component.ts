@@ -26,27 +26,16 @@ export class RegistrationComponent {
 
   constructor(private fb: FormBuilder, private location: Location, private cd: ChangeDetectorRef, private userService: UserService) {
     this.registerForm = this.fb.group({
-      email: ['',[
-        Validators.required
-      ]],
-      password: ['',[
-        Validators.required
-      ]],
-      phoneNumber: ['',[
-        Validators.required
-      ]],
-      firstname: ['',[
-        Validators.required
-      ]],
-      lastname: ['',[
-        Validators.required
-      ]],
-      drvLicenseNumber: ['',[
-        Validators.required
-      ]],
-      confirmPassword: ['',[
-        Validators.required
-      ]]
+      email: [
+        '',
+        [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')],
+      ],
+      password: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required]],
+      firstname: ['', [Validators.required]],
+      lastname: ['', [Validators.required]],
+      drvLicenseNumber: ['', [Validators.required]],
+      confirmPassword: ['', [Validators.required]],
     });
   }
   protected onCancel() {

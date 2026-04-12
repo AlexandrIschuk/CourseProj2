@@ -28,7 +28,7 @@ export class CompleteDrive {
         ...this.drive,
         driveStatus: 'PENDING_PAYMENT'
       };
-      this.driveService.completeDrive(this.drive.driveId, drive).subscribe({
+      this.driveService.updateDrive(this.drive.driveId, drive).subscribe({
         next: () => {
           this.successMessage = 'Завершено успешно. Возврат на предыдущую страницу...';
           this.cd.detectChanges();
@@ -41,9 +41,7 @@ export class CompleteDrive {
       })
     }
     this.completeForm = this.fb.group({
-      totalDistance: ['', [
-        Validators.required
-      ]]
+      totalDistance: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
     });
   }
 
@@ -62,7 +60,7 @@ export class CompleteDrive {
         ...this.completeForm.value,
         driveStatus: 'PENDING_PAYMENT'
       };
-      this.driveService.completeDrive(this.drive.driveId, drive).subscribe({
+      this.driveService.updateDrive(this.drive.driveId, drive).subscribe({
         next: () => {
           this.submitDialog();
           this.ref.close();

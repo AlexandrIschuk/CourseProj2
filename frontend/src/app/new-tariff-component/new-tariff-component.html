@@ -50,9 +50,14 @@
             {{ method.label }}
           </option>
         }
-
       </select>
     </div>
+    @if (errorMessage) {
+      <div class="alert alert-error">
+        {{ errorMessage }}
+        <button type="button" class="alert-close" (click)="errorMessage = ''">×</button>
+      </div>
+    }
     <button type="submit" class="login-btn" >
       Добавить
     </button>

@@ -83,7 +83,7 @@ public class CarControllerTest {
     void testUpdateCarStatus(){
         CarDto carDto = new CarDto();
         carDto.setCarStatus(CarStatus.ON_A_TRIP);
-        ResponseEntity<CarDto> car = carController.updateCarStatus(carId,carDto);
+        ResponseEntity<CarDto> car = carController.updateCar(carId,carDto);
         CarDto carDto1 = car.getBody();
         assertEquals(carId, carDto1.getCarId());
         assertEquals(CarStatus.ON_A_TRIP, carDto1.getCarStatus());

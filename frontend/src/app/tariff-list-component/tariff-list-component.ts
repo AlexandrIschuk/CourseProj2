@@ -63,4 +63,13 @@ export class TariffListComponent implements OnInit{
       }
     })
   }
+
+  protected updateTariff(tariff: Tariff) {
+    this.tariffService.updateTariff(tariff).subscribe({
+      next: () => {
+        this.loadTariffs();
+        this.cd.detectChanges();
+      }
+    })
+  }
 }

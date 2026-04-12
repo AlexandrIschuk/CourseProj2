@@ -20,4 +20,8 @@ export class TariffService{
   public newTariff(tariff:Tariff) {
     return this._httpClient.post(`${environment.apiUrl}/tariffs`, tariff);
   }
+
+  public updateTariff(tariff:Tariff) {
+    return this._httpClient.put(`${environment.apiUrl}/tariffs/${tariff.tariffId}`, tariff);
+  }
 }

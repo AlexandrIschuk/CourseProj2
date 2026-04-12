@@ -10,19 +10,19 @@ import {NewCarComponent} from '../new-car-component/new-car-component';
 
 @Component({
   selector: 'app-car-list-component',
-  imports: [
-    AsyncPipe,
-    NavbarComponent,
-    CarComponent
-  ],
+  imports: [AsyncPipe, NavbarComponent, CarComponent],
   providers: [DialogService],
   templateUrl: './car-list-component.html',
   styleUrl: './car-list-component.css',
 })
-export class CarListComponent implements OnInit{
+export class CarListComponent implements OnInit {
   protected cars$?: Observable<Car[]>;
 
-  constructor(private carService: CarService, private dialogService: DialogService,private cd: ChangeDetectorRef) { }
+  constructor(
+    private carService: CarService,
+    private dialogService: DialogService,
+    private cd: ChangeDetectorRef,
+  ) {}
 
   ngOnInit(): void {
     this.loadCars();
@@ -32,13 +32,11 @@ export class CarListComponent implements OnInit{
     this.carService.deleteCar(id).subscribe({
       next: () => {
         if (this.cars$) {
-          this.cars$ = this.cars$.pipe(
-            map(cars => cars.filter(c => c.carId !== id))
-          );
+          this.cars$ = this.cars$.pipe(map((cars) => cars.filter((c) => c.carId !== id)));
         }
         this.cd.detectChanges();
-      }
-    })
+      },
+    });
   }
 
   private loadCars() {
@@ -48,18 +46,25 @@ export class CarListComponent implements OnInit{
   protected newCar() {
     const ref = this.dialogService.open(NewCarComponent, {
       width: '550px',
-      data: {
-
-      },
+      data: {},
       styleClass: 'complete-trip-dialog',
       closable: true,
-      dismissableMask: true
+      dismissableMask: true,
     });
     ref?.onClose.subscribe({
       next: () => {
         this.loadCars();
         this.cd.detectChanges();
-      }
-    })
+      },
+    });
+  }
+
+  protected updateCar(car: Car) {
+    this.carService.updateCar(car).subscribe({
+      next: () => {
+        this.loadCars();
+        this.cd.detectChanges();
+      },
+    });
   }
 }

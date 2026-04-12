@@ -36,16 +36,21 @@ public class CarController {
         return new ResponseEntity<>(carService.getCarById(id), HttpStatus.OK);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<CarDto> updateCar(@PathVariable Long id, @RequestBody CarDto car){
+        return new ResponseEntity<>(carService.updateCar(id, car), HttpStatus.OK);
+    }
+
     @GetMapping("free")
     @ResponseBody
     public List<CarDto> findFreeCars(){
         return carService.findFreeCars();
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<CarDto> updateCarStatus(@PathVariable Long id, @RequestBody CarDto carDto){
-        return new ResponseEntity<>(carService.updateCarStatus(id,carDto), HttpStatus.OK);
-    }
+//    @PutMapping("/{id}")
+//    public ResponseEntity<CarDto> updateCarStatus(@PathVariable Long id, @RequestBody CarDto carDto){
+//        return new ResponseEntity<>(carService.updateCarStatus(id,carDto), HttpStatus.OK);
+//    }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)

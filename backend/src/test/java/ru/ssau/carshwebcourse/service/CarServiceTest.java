@@ -104,7 +104,7 @@ class CarServiceTest {
         when(carMappingUtils.mapToCarDto(car)).thenReturn(new CarDto());
 
         CarService service = new CarService(carRepository, carMappingUtils);
-        CarDto result = service.updateCarStatus(1L, updateDto);
+        CarDto result = service.updateCar(1L, updateDto);
 
         assertNotNull(result);
         assertEquals(CarStatus.ON_A_TRIP, car.getCarStatus());

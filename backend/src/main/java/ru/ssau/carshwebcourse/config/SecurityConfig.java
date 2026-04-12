@@ -3,6 +3,7 @@ package ru.ssau.carshwebcourse.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
@@ -56,6 +57,13 @@ public class SecurityConfig {
                         .requestMatchers("/auth/login").permitAll()
                         .requestMatchers("/cars").permitAll()
                         .requestMatchers("/auth/refresh").permitAll()
+                        .requestMatchers(HttpMethod.DELETE,"/cars/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT,"/cars/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/cars/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/cars").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE,"/tariffs/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT,"/tariffs/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/tariffs/{id}").hasRole("ADMIN")
                         .requestMatchers("/cars/new").hasRole("ADMIN")
                         .requestMatchers("/tariffs/new").hasRole("ADMIN")
                         .anyRequest().authenticated())

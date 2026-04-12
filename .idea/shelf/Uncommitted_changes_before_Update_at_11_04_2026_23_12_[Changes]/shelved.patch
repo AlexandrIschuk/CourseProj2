@@ -1,0 +1,29 @@
+Index: backend/src/test/java/ru/ssau/carshwebcourse/controller/PaymentControllerTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ru.ssau.carshwebcourse.controller;\r\n\r\nimport org.junit.jupiter.api.AfterEach;\r\nimport org.junit.jupiter.api.BeforeEach;\r\nimport org.junit.jupiter.api.Test;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.boot.test.context.SpringBootTest;\r\nimport ru.ssau.carshwebcourse.dto.PaymentDto;\r\nimport ru.ssau.carshwebcourse.entity.*;\r\nimport ru.ssau.carshwebcourse.repository.*;\r\n\r\nimport static org.junit.jupiter.api.Assertions.assertEquals;\r\n\r\n@SpringBootTest\r\npublic class PaymentControllerTest {\r\n    @Autowired\r\n    private UserRepository userRepository;\r\n    @Autowired\r\n    private TariffRepository tariffRepository;\r\n    @Autowired\r\n    private CarRepository carRepository;\r\n    @Autowired\r\n    private DriveRepository driveRepository;\r\n    @Autowired\r\n    private PaymentRepository paymentRepository;\r\n    @Autowired\r\n    private PaymentController paymentController;\r\n\r\n\r\n    private Drive drive;\r\n\r\n    @BeforeEach\r\n    public void before(){\r\n        drive = new Drive();\r\n        User user = new User();\r\n        userRepository.save(user);\r\n        Tariff tariff = new Tariff();\r\n        tariffRepository.save(tariff);\r\n        Car car = new Car();\r\n        carRepository.save(car);\r\n        drive.setCar(car);\r\n        drive.setTariff(tariff);\r\n        drive.setUser(user);\r\n        drive.setTotalAmount(100L);\r\n        driveRepository.save(drive);\r\n    }\r\n\r\n    @AfterEach\r\n    public void after(){\r\n        paymentRepository.deleteAllInBatch();\r\n    }\r\n\r\n    @Test\r\n    void newPaymentTest(){\r\n        PaymentDto paymentDto = new PaymentDto();\r\n        paymentDto.setDrive(drive);\r\n        PaymentDto newPayment = paymentController.newPayment(paymentDto).getBody();\r\n        assertEquals(drive, newPayment.getDrive());\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/test/java/ru/ssau/carshwebcourse/controller/PaymentControllerTest.java b/backend/src/test/java/ru/ssau/carshwebcourse/controller/PaymentControllerTest.java
+--- a/backend/src/test/java/ru/ssau/carshwebcourse/controller/PaymentControllerTest.java	(revision ce95d0b1f24ac34d4a7c108b5be9fc0defa271f7)
++++ b/backend/src/test/java/ru/ssau/carshwebcourse/controller/PaymentControllerTest.java	(date 1775931136516)
+@@ -50,11 +50,11 @@
+         paymentRepository.deleteAllInBatch();
+     }
+ 
+-    @Test
+-    void newPaymentTest(){
+-        PaymentDto paymentDto = new PaymentDto();
+-        paymentDto.setDrive(drive);
+-        PaymentDto newPayment = paymentController.newPayment(paymentDto).getBody();
+-        assertEquals(drive, newPayment.getDrive());
+-    }
++//    @Test
++//    void newPaymentTest(){
++//        PaymentDto paymentDto = new PaymentDto();
++//        paymentDto.setDrive(drive);
++//        PaymentDto newPayment = paymentController.newPayment(paymentDto).getBody();
++//        assertEquals(drive, newPayment.getDrive());
++//    }
+ }

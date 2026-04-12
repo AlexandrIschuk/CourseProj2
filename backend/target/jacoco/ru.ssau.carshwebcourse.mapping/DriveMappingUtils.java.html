@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DriveMappingUtils.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Study Backend</a> &gt; <a href="index.source.html" class="el_package">ru.ssau.carshwebcourse.mapping</a> &gt; <span class="el_source">DriveMappingUtils.java</span></div><h1>DriveMappingUtils.java</h1><pre class="source lang-java linenums">package ru.ssau.carshwebcourse.mapping;
+
+import org.springframework.stereotype.Component;
+import ru.ssau.carshwebcourse.dto.DriveDto;
+import ru.ssau.carshwebcourse.entity.Car;
+import ru.ssau.carshwebcourse.entity.Drive;
+import ru.ssau.carshwebcourse.entity.Tariff;
+import ru.ssau.carshwebcourse.entity.User;
+import ru.ssau.carshwebcourse.repository.CarRepository;
+import ru.ssau.carshwebcourse.repository.TariffRepository;
+import ru.ssau.carshwebcourse.repository.UserRepository;
+
+@Component
+public class DriveMappingUtils {
+    private final CarRepository carRepository;
+
+<span class="fc" id="L17">    public DriveMappingUtils(CarRepository carRepository){</span>
+<span class="fc" id="L18">        this.carRepository = carRepository;</span>
+<span class="fc" id="L19">    }</span>
+
+    public Drive mapToDriveEntity(DriveDto driveDto){
+<span class="nc" id="L22">        Drive entity = new Drive();</span>
+
+<span class="nc" id="L24">        User user = new User();</span>
+<span class="nc" id="L25">        user.setUserId(driveDto.getUserId());</span>
+<span class="nc" id="L26">        entity.setDriveId(driveDto.getDriveId());</span>
+<span class="nc" id="L27">        entity.setUser(user);</span>
+<span class="nc" id="L28">        entity.setCar(driveDto.getCar());</span>
+<span class="nc" id="L29">        entity.setTariff(driveDto.getTariff());</span>
+<span class="nc" id="L30">        entity.setStartRental(driveDto.getStartRental());</span>
+<span class="nc" id="L31">        entity.setEndRental(driveDto.getEndRental());</span>
+<span class="nc" id="L32">        entity.setTotalDistance(driveDto.getTotalDistance());</span>
+<span class="nc" id="L33">        entity.setTotalAmount(driveDto.getTotalAmount());</span>
+<span class="nc" id="L34">        entity.setDriveStatus(driveDto.getDriveStatus());</span>
+<span class="nc" id="L35">        return entity;</span>
+    }
+
+    public DriveDto mapToDriveDto(Drive entity){
+<span class="nc" id="L39">        DriveDto driveDto = new DriveDto();</span>
+<span class="nc" id="L40">        driveDto.setDriveId(entity.getDriveId());</span>
+<span class="nc" id="L41">        driveDto.setUserId(entity.getUser().getUserId());</span>
+<span class="nc" id="L42">        driveDto.setCar(entity.getCar());</span>
+<span class="nc" id="L43">        driveDto.setTariff(entity.getTariff());</span>
+<span class="nc" id="L44">        driveDto.setStartRental(entity.getStartRental());</span>
+<span class="nc" id="L45">        driveDto.setEndRental(entity.getEndRental());</span>
+<span class="nc" id="L46">        driveDto.setTotalDistance(entity.getTotalDistance());</span>
+<span class="nc" id="L47">        driveDto.setTotalAmount(entity.getTotalAmount());</span>
+<span class="nc" id="L48">        driveDto.setDriveStatus(entity.getDriveStatus());</span>
+<span class="nc" id="L49">        return driveDto;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

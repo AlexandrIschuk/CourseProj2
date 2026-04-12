@@ -14,7 +14,8 @@
       @for (tariff of tariffs; track tariff.tariffId){
         <tr app-tariff-component
             [tariff]="tariff"
-            (delete)="deleteTariff($event)">
+            (delete)="deleteTariff($event)"
+            (update)="updateTariff($event)">
         </tr>
       }
     }

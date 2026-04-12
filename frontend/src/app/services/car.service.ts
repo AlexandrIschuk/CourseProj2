@@ -25,4 +25,8 @@ export class CarService{
     return this._httpClient.post(`${environment.apiUrl}/cars`, car);
   }
 
+  public updateCar(car: Car){
+    return this._httpClient.put(`${environment.apiUrl}/cars/${car.carId}`, car);
+  }
+
 }

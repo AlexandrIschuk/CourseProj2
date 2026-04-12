@@ -16,7 +16,8 @@
       @for (car of cars; track car.carId){
         <tr app-car-component
             [car]="car"
-            (delete)="deleteCar($event)">
+            (delete)="deleteCar($event)"
+            (update)="updateCar($event)">
         </tr>
       }
     }

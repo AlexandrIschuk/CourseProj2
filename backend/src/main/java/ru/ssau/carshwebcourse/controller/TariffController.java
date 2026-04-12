@@ -34,6 +34,11 @@ public class TariffController {
         return new ResponseEntity<>(tariffService.getTariffById(id), HttpStatus.OK);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<TariffDto> updateTariff(@PathVariable Long id, @RequestBody TariffDto tariff){
+        return new ResponseEntity<>(tariffService.updateTariff(id,tariff), HttpStatus.OK);
+    }
+
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)

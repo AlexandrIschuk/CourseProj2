@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PaymentController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Study Backend</a> &gt; <a href="index.source.html" class="el_package">ru.ssau.carshwebcourse.controller</a> &gt; <span class="el_source">PaymentController.java</span></div><h1>PaymentController.java</h1><pre class="source lang-java linenums">package ru.ssau.carshwebcourse.controller;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+import ru.ssau.carshwebcourse.dto.PaymentDto;
+import ru.ssau.carshwebcourse.dto.TariffDto;
+import ru.ssau.carshwebcourse.service.CustomUserDetailsService;
+import ru.ssau.carshwebcourse.service.PaymentService;
+
+import java.util.List;
+
+@Controller
+@RequestMapping(&quot;/payments&quot;)
+public class PaymentController {
+    private final PaymentService paymentService;
+    private final CustomUserDetailsService userDetailsService;
+
+<span class="fc" id="L23">    public PaymentController(PaymentService paymentService,CustomUserDetailsService userDetailsService){</span>
+<span class="fc" id="L24">        this.paymentService = paymentService;</span>
+<span class="fc" id="L25">        this.userDetailsService = userDetailsService;</span>
+<span class="fc" id="L26">    }</span>
+
+    @PostMapping
+    public ResponseEntity&lt;PaymentDto&gt; newPayment(@RequestBody PaymentDto payment){
+<span class="nc" id="L30">        return new ResponseEntity&lt;&gt;(paymentService.newPayment(payment), HttpStatus.CREATED);</span>
+    }
+
+    @GetMapping
+    @ResponseBody
+    public List&lt;PaymentDto&gt; findAll(@AuthenticationPrincipal UserDetails user){
+<span class="nc" id="L36">       return paymentService.getAllPaymentToUser(userDetailsService.getUserByEmail(user.getUsername()).getUserId());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

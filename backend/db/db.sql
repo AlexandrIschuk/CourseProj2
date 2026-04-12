@@ -38,7 +38,7 @@ CREATE TABLE drive
     end_rental     timestamp,
     total_distance bigint,
     total_amount   bigint,
-    drive_status   varchar(15),
+    drive_status   varchar(20),
     foreign key (user_id) references "user" (user_id),
     foreign key (car_id) references car (car_id),
     foreign key (tariff_id) references tariff (tariff_id)

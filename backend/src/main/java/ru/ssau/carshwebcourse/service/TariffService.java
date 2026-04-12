@@ -26,6 +26,16 @@ public class TariffService {
         return tariffMappingUtils.mapTariffToDto(tariffRepository.save(tariffMappingUtils.mapTariffToEntity(tariffDto)));
     }
 
+    public TariffDto updateTariff(Long id, TariffDto tariffDto){
+        Tariff tariff = tariffRepository.getTariffByTariffId(id);
+        tariff.setName(tariffDto.getName());
+        tariff.setPrice(tariffDto.getPrice());
+        tariff.setTariffType(tariffDto.getTariffType());
+        tariffRepository.save(tariff);
+        return tariffMappingUtils.mapTariffToDto(tariff);
+
+    }
+
     public  TariffDto getTariffById(Long id){
         return tariffMappingUtils.mapTariffToDto(tariffRepository.findById(id).orElseThrow(() -> new NotFoundException("Tariff not found")));
     }

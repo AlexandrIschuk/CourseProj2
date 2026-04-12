@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ru.ssau.carshwebcourse.CarshWebCourseApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.741 s -- in ru.ssau.carshwebcourse.CarshWebCourseApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.89 s -- in ru.ssau.carshwebcourse.CarshWebCourseApplicationTests

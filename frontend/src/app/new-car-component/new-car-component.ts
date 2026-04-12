@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {Car} from '../interfaces/car';
 import {CarService} from '../services/car.service';
 import {DynamicDialogRef} from 'primeng/dynamicdialog';
 import {NgxMaskDirective} from 'ngx-mask';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-new-car-component',
@@ -24,7 +25,7 @@ export class NewCarComponent {
 
   };
 
-  constructor(private fb: FormBuilder, private carService: CarService, public ref: DynamicDialogRef,) {
+  constructor(private cd: ChangeDetectorRef,private fb: FormBuilder, private carService: CarService, public ref: DynamicDialogRef,) {
     this.newCarForm = this.fb.group({
       carBrand: ['', [
         Validators.required
@@ -50,6 +51,12 @@ export class NewCarComponent {
       this.carService.addCar(newCar).subscribe({
         next: () => {
           this.ref.close();
+        },
+        error: (error: HttpErrorResponse) => {
+          if(error.status == 409){
+            this.errorMessage = "Автомобиль с таким номером уже существует!"
+            this.cd.detectChanges();
+          }
         }
       })
     }

@@ -1,11 +1,51 @@
 <td class="td">{{ tariff.tariffId }}</td>
-<td class="td">{{ tariff.name }}</td>
-<td class="td">{{ tariff.price }}</td>
 <td class="td">
-  <span class="status" [attr.data-status]="[`${ tariff.tariffType }`]"></span>
+  @if (isEdit) {
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="tariff.name">
+  }
+  @if (!isEdit) {
+    {{ tariff.name }}
+  }
+</td>
+<td class="td">
+  @if (isEdit) {
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="tariff.price">
+  }
+  @if (!isEdit) {
+    {{ tariff.price }}
+  }
+</td>
+<td class="td">
+  @if (isEdit) {
+    <select
+      id="taskStatus"
+      class="form-control"
+      [(ngModel)]="tariff.tariffType">
+      @for (method of methods; track method.value) {
+        <option [ngValue]="method.value">
+          {{ method.label }}
+        </option>
+      }
+    </select>
+  }
+  @if (!isEdit) {
+    <span class="status" [attr.data-status]="[`${ tariff.tariffType }`]"></span>
+  }
 </td>
 <td class="td">
   <div class="actions">
-    <button class="delete-btn" (click)="onDelete()">Удалить тариф</button>
+    @if (!isEdit) {
+      <button class="edit-btn" (click)="onEdit()">Редактировать</button>
+      <button class="delete-btn" (click)="onDelete()">Удалить тариф</button>
+    } @else {
+      <button class="edit-btn" (click)="onUpdate()">Обновить</button>
+      <button class="delete-btn" (click)="onCancel()">Отменить</button>
+    }
   </div>
 </td>

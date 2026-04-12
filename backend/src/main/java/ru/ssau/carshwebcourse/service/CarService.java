@@ -36,17 +36,28 @@ public class CarService {
         return carMappingUtils.mapToCarDto(entity);
     }
 
+    public CarDto updateCar(Long id, CarDto car){
+        Car oldCar = carRepository.findById(id).orElseThrow(() -> new NotFoundException("Car not found"));
+        oldCar.setCarBrand(car.getCarBrand());
+        oldCar.setCarModel(car.getCarModel());
+        oldCar.setCarYear(car.getYear());
+        oldCar.setCarRegistrationNumber(car.getCarRegistrationNumber());
+        oldCar.setCarStatus(car.getCarStatus());
+        carRepository.save(oldCar);
+        return carMappingUtils.mapToCarDto(oldCar);
+    }
+
     public List<CarDto> findFreeCars(){
         List<Car> cars = carRepository.findCarByCarStatus(CarStatus.FREE);
         return cars.stream().map(carMappingUtils::mapToCarDto).collect(Collectors.toList());
     }
 
-    public CarDto updateCarStatus(Long id, CarDto car){
-        Car car1 = carRepository.findById(id).orElseThrow(() -> new NotFoundException("Car not found"));
-        car1.setCarStatus(car.getCarStatus());
-        carRepository.save(car1);
-        return carMappingUtils.mapToCarDto(car1);
-    }
+//    public CarDto updateCarStatus(Long id, CarDto car){
+//        Car car1 = carRepository.findById(id).orElseThrow(() -> new NotFoundException("Car not found"));
+//        car1.setCarStatus(car.getCarStatus());
+//        carRepository.save(car1);
+//        return carMappingUtils.mapToCarDto(car1);
+//    }
 
     public void deleteCar(Long id){
         carRepository.deleteById(id);

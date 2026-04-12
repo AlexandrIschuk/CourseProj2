@@ -15,6 +15,9 @@
           @if (email?.errors?.['required']){
             <small>Email обязателен</small>
           }
+          @if (email?.errors?.['pattern']){
+            <small>Введите корректный Email</small>
+          }
         </div>
       }
     </div>

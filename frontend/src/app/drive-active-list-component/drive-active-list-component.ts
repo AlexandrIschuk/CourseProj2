@@ -71,12 +71,15 @@ export class DriveActiveListComponent implements OnInit{
         if(result == 'submitted'){
           if (this.drives$) {
             this.drives$ = this.drives$.pipe(
-              map(drives => drives.map(currDrive =>
-                currDrive.driveId === drive.driveId
-                  ? { ...currDrive, driveStatus: 'PENDING_PAYMENT'}
-                  : currDrive
-              ))
+              map((drives) =>
+                drives.map((currDrive) =>
+                  currDrive.driveId === drive.driveId
+                    ? { ...currDrive, driveStatus: 'PENDING_PAYMENT' }
+                    : currDrive,
+                ),
+              ),
             );
+            this.cd.detectChanges();
           }
         }
       }

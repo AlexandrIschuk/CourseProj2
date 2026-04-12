@@ -23,7 +23,7 @@ export class DriveService{
     return this._httpClient.put(`${environment.apiUrl}/drives/cancel/${id}`, null);
   }
 
-  public completeDrive(id: number,drive: Drive){
+  public updateDrive(id: number,drive: Drive){
     return this._httpClient.put(`${environment.apiUrl}/drives/${id}`, drive);
   }
 

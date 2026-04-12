@@ -1,16 +1,124 @@
 <td class="td">{{ car.carId }}</td>
-<td class="td">{{ car.carBrand }}</td>
-<td class="td">{{ car.carModel }}</td>
-<td class="td">{{ car.carRegistrationNumber }}</td>
-<td class="td">{{ car.year }}</td>
+<td class="td">
+  @if (isEdit) {
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="car.carBrand"
+      #brand="ngModel"
+      required
+      minlength="2"
+      maxlength="50"
+      pattern="[A-Za-zА-Яа-я\\s]+"
+      [class.invalid]="isBrandInvalid"
+    >
+    @if (brand.invalid && brand.touched) {
+      <div class="error-message">
+        @if (brand.errors?.['required']) {
+          <small>Поле обязательно</small>
+        }
+        @if (brand.errors?.['minlength']) {
+          <small>Минимум 2 символа</small>
+        }
+        @if (brand.errors?.['pattern']) {
+          <small>Только буквы</small>
+        }
+      </div>
+    }
+  }
+  @if (!isEdit) {
+    {{ car.carBrand }}
+  }
+</td>
+<td class="td">
+  @if (isEdit) {
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="car.carModel"
+      #model="ngModel"
+      required
+      minlength="1"
+      [class.invalid]="isModelInvalid"
+    >
+
+    @if (model.invalid && model.touched) {
+      <div class="error-message">Поле обязательно</div>
+    }
+  }
+  @if (!isEdit) {
+    {{ car.carModel }}
+  }
+</td>
+<td class="td">
+  @if (isEdit) {
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="car.carRegistrationNumber"
+      #regNumber="ngModel"
+      required
+      pattern="[A-Z0-9]{6,10}"
+      [class.invalid]="isRegNumberInvalid">
+    @if (regNumber.invalid && regNumber.touched) {
+      <div class="error-message">
+        @if (regNumber.errors?.['required']) {
+          <small>Обязательное поле</small>
+        }
+        @if (regNumber.errors?.['pattern']) {
+          <small>Формат: ABC123 (6-10 символов)</small>
+        }
+      </div>
+    }
+  }
+  @if (!isEdit) {
+    {{ car.carRegistrationNumber }}
+  }
+</td>
+<td class="td">
+  @if (isEdit) {
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="car.year"
+      #year="ngModel"
+      required
+      min="2016"
+      max="2026"
+      [class.invalid]="isYearInvalid">
+    @if (year.invalid && year.touched) {
+      @if (year.errors?.['required']) {
+        <small class="error">Год выпуска обязателен</small>
+      }
+      @if (year.errors?.['min'] || year.errors?.['max']) {
+        <small class="error">Год должен быть от 1886 до 2026</small>
+      }
+    }
+  }
+  @if (!isEdit) {
+    {{ car.year }}
+  }
+</td>
 <td class="td">
   <span class="status" [attr.data-status]="[`${car.carStatus}`]"></span>
 </td>
 <td class="td">
   <div class="actions">
-    @if(car.carStatus == "FREE"){
-      <button class="delete-btn" (click)="onDelete()">Удалить авто</button>
+    @if (car.carStatus == "FREE") {
+      @if (!isEdit) {
+        <button class="edit-btn" (click)="onEdit()">Редактировать</button>
+        <button class="delete-btn" (click)="onDelete()">Удалить авто</button>
+      } @else {
+        <button class="edit-btn" (click)="onUpdate()"
+                [disabled]="isBrandInvalid || isRegNumberInvalid || isModelInvalid || isYearInvalid">Обновить
+        </button>
+        <button class="delete-btn" (click)="onCancel()">Отменить</button>
+      }
+
     }
   </div>
 </td>
+
+
+
 

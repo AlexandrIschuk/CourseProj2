@@ -32,11 +32,17 @@ public class PaymentControllerTest {
     @BeforeEach
     public void before(){
         drive = new Drive();
-        Car car = new Car();
-        Tariff tariff = new Tariff();
         User user = new User();
-        drive.setTotalAmount(111L);
-        drive.setDriveId(1L);
+        userRepository.save(user);
+        Tariff tariff = new Tariff();
+        tariffRepository.save(tariff);
+        Car car = new Car();
+        carRepository.save(car);
+        drive.setCar(car);
+        drive.setTariff(tariff);
+        drive.setUser(user);
+        drive.setTotalAmount(100L);
+        driveRepository.save(drive);
     }
 
     @AfterEach
@@ -49,6 +55,6 @@ public class PaymentControllerTest {
 //        PaymentDto paymentDto = new PaymentDto();
 //        paymentDto.setDrive(drive);
 //        PaymentDto newPayment = paymentController.newPayment(paymentDto).getBody();
-//        assertEquals(111L, newPayment.getDrive().getTotalAmount());
+//        assertEquals(drive, newPayment.getDrive());
 //    }
 }

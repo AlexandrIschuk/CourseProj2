@@ -1,0 +1,124 @@
+<changelist name="Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]" date="1775930871987" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11.04.2026 23:07 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/service/DriveService.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/service/DriveService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/DriveService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/entity/User.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/entity/User.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/User.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/test-classes/ru/ssau/carshwebcourse/controller/PaymentControllerTest.class" />
+    <option name="AFTER_PATH" value="backend/target/test-classes/ru/ssau/carshwebcourse/controller/PaymentControllerTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/PaymentControllerTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/entity/Tariff.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/entity/Tariff.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/Tariff.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/entity/Car.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/entity/Car.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/Car.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/service/CarService.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/service/CarService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/CarService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/service/TariffService.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/service/TariffService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/TariffService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="frontend/.angular/cache/21.2.5/CarshFront/angular-compiler.db-lock" />
+    <option name="AFTER_PATH" value="frontend/.angular/cache/21.2.5/CarshFront/angular-compiler.db-lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/angular-compiler.db-lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/jacoco.exec" />
+    <option name="AFTER_PATH" value="backend/target/jacoco.exec" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/jacoco.exec" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/service/TokenService.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/service/TokenService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/TokenService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/entity/Role.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/entity/Role.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/Role.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/test-classes/ru/ssau/carshwebcourse/service/CarServiceTest.class" />
+    <option name="AFTER_PATH" value="backend/target/test-classes/ru/ssau/carshwebcourse/service/CarServiceTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/CarServiceTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/test-classes/ru/ssau/carshwebcourse/service/CustomUserDetailsServiceTest.class" />
+    <option name="AFTER_PATH" value="backend/target/test-classes/ru/ssau/carshwebcourse/service/CustomUserDetailsServiceTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/CustomUserDetailsServiceTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/controller/AuthController.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/controller/AuthController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/AuthController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="frontend/.angular/cache/21.2.5/CarshFront/angular-compiler.db" />
+    <option name="AFTER_PATH" value="frontend/.angular/cache/21.2.5/CarshFront/angular-compiler.db" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/angular-compiler.db" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/exceptionHandler/GlobalExceptionHandler.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/exceptionHandler/GlobalExceptionHandler.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/GlobalExceptionHandler.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/entity/Payment.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/entity/Payment.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/Payment.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/test-classes/ru/ssau/carshwebcourse/service/TariffServiceTest.class" />
+    <option name="AFTER_PATH" value="backend/target/test-classes/ru/ssau/carshwebcourse/service/TariffServiceTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/TariffServiceTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/dto/UserDto.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/dto/UserDto.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/UserDto.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/service/CustomUserDetailsService.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/service/CustomUserDetailsService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/CustomUserDetailsService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/entity/Drive.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/entity/Drive.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/Drive.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/service/PaymentService.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/service/PaymentService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/PaymentService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/entity/AuthResponse.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/entity/AuthResponse.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/AuthResponse.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/config/SecurityConfig.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/ru/ssau/carshwebcourse/config/SecurityConfig.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2026_23_07_[Changes]/SecurityConfig.class" />
+  </binary>
+</changelist>

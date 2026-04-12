@@ -19,6 +19,9 @@
             @if (totalDistance?.errors?.['required']){
               <small>Ввод обязателен</small>
             }
+            @if (totalDistance?.errors?.['pattern']){
+              <small>Только цифры!</small>
+            }
           </div>
         }
       </div>
