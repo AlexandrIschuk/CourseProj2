@@ -33,5 +33,10 @@ public class UserController {
 <span class="fc" id="L33">        return new ResponseEntity&lt;&gt;(customUserDetailsService.getUserByUserId(id), HttpStatus.OK);</span>
     }
 
+    @PutMapping(&quot;/{email}&quot;)
+    public ResponseEntity&lt;UserDto&gt; updateUser(@PathVariable String email, @RequestBody UserDto user){
+<span class="nc" id="L38">        return new ResponseEntity&lt;&gt;(customUserDetailsService.updateUser(email,user), HttpStatus.OK);</span>
+    }
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

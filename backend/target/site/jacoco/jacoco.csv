@@ -24,12 +24,12 @@ Study Backend,ru.ssau.carshwebcourse.controller,DriveController,67,9,0,0,11,4,7,
 Study Backend,ru.ssau.carshwebcourse.controller,AuthController,89,12,0,0,17,5,4,1,4,1
 Study Backend,ru.ssau.carshwebcourse.controller,TariffController,15,28,0,0,3,6,2,4,2,4
 Study Backend,ru.ssau.carshwebcourse.controller,CarController,5,42,0,0,2,8,1,6,1,6
-Study Backend,ru.ssau.carshwebcourse.controller,UserController,0,20,0,0,0,6,0,3,0,3
+Study Backend,ru.ssau.carshwebcourse.controller,UserController,10,20,0,0,1,6,1,3,1,3
 Study Backend,ru.ssau.carshwebcourse.dto,PaymentDto,0,3,0,0,0,1,0,1,0,1
 Study Backend,ru.ssau.carshwebcourse.dto,TariffDto,0,3,0,0,0,1,0,1,0,1
 Study Backend,ru.ssau.carshwebcourse.dto,CarDto,0,3,0,0,0,1,0,1,0,1
 Study Backend,ru.ssau.carshwebcourse.dto,DriveDto,0,3,0,0,0,1,0,1,0,1
-Study Backend,ru.ssau.carshwebcourse.service,CustomUserDetailsService,21,93,0,0,1,18,3,6,3,6
+Study Backend,ru.ssau.carshwebcourse.service,CustomUserDetailsService,65,93,0,0,9,18,5,6,5,6
 Study Backend,ru.ssau.carshwebcourse.service,TokenService,178,3,4,0,43,1,8,1,6,1
 Study Backend,ru.ssau.carshwebcourse.service,CarService,10,112,0,0,2,19,2,7,2,7
 Study Backend,ru.ssau.carshwebcourse.service,TokenService.new TypeReference() {...},6,0,0,0,1,0,1,0,1,0

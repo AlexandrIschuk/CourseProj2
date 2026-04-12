@@ -16,4 +16,8 @@ export class UserService{
     return this._httpClient.get<User>(`${environment.apiUrl}/users/${userId}`);
   }
 
+  public updateUser(user : User) {
+    return this._httpClient.put(`${environment.apiUrl}/users/${user.email}`, user);
+  }
+
 }

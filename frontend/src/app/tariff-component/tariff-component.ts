@@ -1,10 +1,11 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Tariff} from '../interfaces/tariff';
 import {FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: '[app-tariff-component]',
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, NgxMaskDirective],
   templateUrl: './tariff-component.html',
   styleUrl: './tariff-component.css',
 })
@@ -31,7 +32,24 @@ export class TariffComponent {
     this.update.emit(this.tariff);
   }
 
-  protected onCancel(){
+  protected onCancel() {
     this.isEdit = false;
+  }
+
+  protected isRequired(item: any) {
+    if (item == '') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  protected isValid(tariff: Tariff) {
+    if(this.isRequired(tariff.name) || this.isRequired(tariff.price)){
+      return true;
+    } else{
+      return false;
+    }
+
   }
 }

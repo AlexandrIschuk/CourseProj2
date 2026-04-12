@@ -5,6 +5,9 @@
       type="text"
       class="form-control"
       [(ngModel)]="tariff.name">
+    @if (isRequired(tariff.name)) {
+      <div class="validation-error">Поле обязательно</div>
+    }
   }
   @if (!isEdit) {
     {{ tariff.name }}
@@ -15,7 +18,12 @@
     <input
       type="text"
       class="form-control"
-      [(ngModel)]="tariff.price">
+      [(ngModel)]="tariff.price"
+      mask="0000000">
+    @if (isRequired(tariff.price)) {
+      <div class="validation-error">Поле обязательно</div>
+    }
+
   }
   @if (!isEdit) {
     {{ tariff.price }}
@@ -44,7 +52,7 @@
       <button class="edit-btn" (click)="onEdit()">Редактировать</button>
       <button class="delete-btn" (click)="onDelete()">Удалить тариф</button>
     } @else {
-      <button class="edit-btn" (click)="onUpdate()">Обновить</button>
+      <button class="edit-btn" (click)="onUpdate()" [disabled]="isValid(tariff)">Обновить</button>
       <button class="delete-btn" (click)="onCancel()">Отменить</button>
     }
   </div>

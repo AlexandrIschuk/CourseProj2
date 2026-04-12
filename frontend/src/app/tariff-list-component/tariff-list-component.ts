@@ -8,6 +8,7 @@ import {TariffService} from '../services/tariff.service';
 import {TariffComponent} from '../tariff-component/tariff-component';
 import {DialogService} from 'primeng/dynamicdialog';
 import {NewTariffComponent} from '../new-tariff-component/new-tariff-component';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-tariff-list-component',
@@ -22,6 +23,7 @@ import {NewTariffComponent} from '../new-tariff-component/new-tariff-component';
 })
 export class TariffListComponent implements OnInit{
   protected tariffs$?: Observable<Tariff[]>;
+  protected errorMessage = '';
 
   constructor(private dialogService: DialogService, private tariffService: TariffService, private cd: ChangeDetectorRef) { }
 
@@ -69,6 +71,12 @@ export class TariffListComponent implements OnInit{
       next: () => {
         this.loadTariffs();
         this.cd.detectChanges();
+      },
+      error: (err: HttpErrorResponse) => {
+        if(err.status == 409){
+          this.errorMessage = "Тариф с таким именем уже существует!"
+          this.cd.detectChanges();
+        }
       }
     })
   }

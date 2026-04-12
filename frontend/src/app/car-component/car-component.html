@@ -4,26 +4,9 @@
     <input
       type="text"
       class="form-control"
-      [(ngModel)]="car.carBrand"
-      #brand="ngModel"
-      required
-      minlength="2"
-      maxlength="50"
-      pattern="[A-Za-zА-Яа-я\\s]+"
-      [class.invalid]="isBrandInvalid"
-    >
-    @if (brand.invalid && brand.touched) {
-      <div class="error-message">
-        @if (brand.errors?.['required']) {
-          <small>Поле обязательно</small>
-        }
-        @if (brand.errors?.['minlength']) {
-          <small>Минимум 2 символа</small>
-        }
-        @if (brand.errors?.['pattern']) {
-          <small>Только буквы</small>
-        }
-      </div>
+      [(ngModel)]="car.carBrand">
+    @if (isRequired(car.carBrand)) {
+      <div class="validation-error">Поле обязательно</div>
     }
   }
   @if (!isEdit) {
@@ -35,15 +18,9 @@
     <input
       type="text"
       class="form-control"
-      [(ngModel)]="car.carModel"
-      #model="ngModel"
-      required
-      minlength="1"
-      [class.invalid]="isModelInvalid"
-    >
-
-    @if (model.invalid && model.touched) {
-      <div class="error-message">Поле обязательно</div>
+      [(ngModel)]="car.carModel">
+    @if (isRequired(car.carModel)) {
+      <div class="validation-error">Поле обязательно</div>
     }
   }
   @if (!isEdit) {
@@ -56,19 +33,11 @@
       type="text"
       class="form-control"
       [(ngModel)]="car.carRegistrationNumber"
-      #regNumber="ngModel"
-      required
-      pattern="[A-Z0-9]{6,10}"
-      [class.invalid]="isRegNumberInvalid">
-    @if (regNumber.invalid && regNumber.touched) {
-      <div class="error-message">
-        @if (regNumber.errors?.['required']) {
-          <small>Обязательное поле</small>
-        }
-        @if (regNumber.errors?.['pattern']) {
-          <small>Формат: ABC123 (6-10 символов)</small>
-        }
-      </div>
+      [patterns]="customPatterns"
+      mask="X000XX000"
+      placeholder="A000AA000">
+    @if (isRegNumber(car.carRegistrationNumber)) {
+      <div class="validation-error">Введите номер полностью!</div>
     }
   }
   @if (!isEdit) {
@@ -81,19 +50,10 @@
       type="text"
       class="form-control"
       [(ngModel)]="car.year"
-      #year="ngModel"
-      required
-      min="2016"
-      max="2026"
-      [class.invalid]="isYearInvalid">
-    @if (year.invalid && year.touched) {
-      @if (year.errors?.['required']) {
-        <small class="error">Год выпуска обязателен</small>
-      }
-      @if (year.errors?.['min'] || year.errors?.['max']) {
-        <small class="error">Год должен быть от 1886 до 2026</small>
-      }
-    }
+      mask="000"
+      prefix="2"
+    [dropSpecialCharacters]="false">
+    <div class="validation-error">{{isYear(car.year)}}</div>
   }
   @if (!isEdit) {
     {{ car.year }}
@@ -110,7 +70,7 @@
         <button class="delete-btn" (click)="onDelete()">Удалить авто</button>
       } @else {
         <button class="edit-btn" (click)="onUpdate()"
-                [disabled]="isBrandInvalid || isRegNumberInvalid || isModelInvalid || isYearInvalid">Обновить
+                [disabled]="isValid(car)">Обновить
         </button>
         <button class="delete-btn" (click)="onCancel()">Отменить</button>
       }

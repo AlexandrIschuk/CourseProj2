@@ -1,4 +1,10 @@
 <div app-navbar-component (newTariff)="newTariff()"></div>
+@if (errorMessage) {
+  <div class="alert alert-error">
+    {{ errorMessage }}
+    <button type="button" class="alert-close" (click)="errorMessage = ''">×</button>
+  </div>
+}
 <table class="tasks-table">
   <thead>
   <tr>

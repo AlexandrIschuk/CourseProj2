@@ -37,7 +37,7 @@ export class NewCarComponent {
         Validators.required
       ]],
       year: ['', [
-        Validators.required
+        Validators.required, Validators.min(2016)
       ]],
     })
   }

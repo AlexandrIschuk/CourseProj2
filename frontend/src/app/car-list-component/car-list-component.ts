@@ -7,6 +7,7 @@ import {CarComponent} from '../car-component/car-component';
 import {DialogService} from 'primeng/dynamicdialog';
 import {CarService} from '../services/car.service';
 import {NewCarComponent} from '../new-car-component/new-car-component';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-car-list-component',
@@ -17,6 +18,7 @@ import {NewCarComponent} from '../new-car-component/new-car-component';
 })
 export class CarListComponent implements OnInit {
   protected cars$?: Observable<Car[]>;
+  protected errorMessage = '';
 
   constructor(
     private carService: CarService,
@@ -65,6 +67,12 @@ export class CarListComponent implements OnInit {
         this.loadCars();
         this.cd.detectChanges();
       },
+      error: (err: HttpErrorResponse) => {
+        if(err.status == 409){
+          this.errorMessage = "Автомобиль с таким номером уже существует!";
+          this.cd.detectChanges();
+        }
+      }
     });
   }
 }

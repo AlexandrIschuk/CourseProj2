@@ -18,6 +18,13 @@
   box-sizing: border-box;
 }
 
+.validation-error {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+
 .form-control:focus {
   outline: none;
   border-color: #667eea;

@@ -11,6 +11,7 @@ import ru.ssau.carshwebcourse.dto.UserDto;
 import ru.ssau.carshwebcourse.entity.Role;
 import ru.ssau.carshwebcourse.entity.User;
 import ru.ssau.carshwebcourse.entity.UserRole;
+import ru.ssau.carshwebcourse.exceptionHandler.NotFoundException;
 import ru.ssau.carshwebcourse.mapping.UserMappingUtils;
 import ru.ssau.carshwebcourse.repository.UserRepository;
 
@@ -50,10 +51,21 @@ public class CustomUserDetailsService implements UserDetailsService {
         userRepository.save(user);
     }
 
+    public UserDto updateUser(String email, UserDto user){
+        User user1 = userRepository.findUserByEmail(email).orElseThrow(() -> new NotFoundException("User not found"));
+        user1.setFirstname(user.getFirstname());
+        user1.setLastname(user.getLastname());
+        user1.setEmail(user.getEmail());
+        user1.setPhoneNumber("+7" + user.getPhoneNumber());
+        user1.setDrvLicenseNumber(user.getDrvLicenseNumber());
+        userRepository.save(user1);
+        return userMappingUtils.mapToUserDto(user1);
+    }
+
     public UserDto getUserByEmail(String email){
         return userMappingUtils.mapToUserDto(userRepository.findUserByEmail(email).orElseThrow(() -> new UsernameNotFoundException("Пользователь не существует!")));
     }
     public UserDto getUserByUserId(Long id){
-        return userMappingUtils.mapToUserDto(userRepository.getUsersByUserId(id).orElseThrow(() -> new UsernameNotFoundException("Пользователь не существует!")));
+        return userMappingUtils.mapToUserDto(userRepository.getUserByUserId(id).orElseThrow(() -> new UsernameNotFoundException("Пользователь не существует!")));
     }
 }

@@ -76,6 +76,9 @@
           @if (year?.errors?.['required']){
             <small>Ввод обязателен</small>
           }
+          @if (year?.errors?.['min']){
+            <small>Машина не должна быть старше 10 лет!</small>
+          }
         </div>
       }
     </div>

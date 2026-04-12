@@ -4,27 +4,115 @@
     <h2 class="login-title">Информация о пользователе</h2>
     <div class="info-group">
       <label class="info-label">Email</label>
-      <div class="info-value">{{ user.email }}</div>
+      <div class="info-value">
+        @if (isEdit) {
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="user.email">
+          @if (isRequired(user.email)) {
+            <div class="validation-error">Поле обязательно</div>
+          }
+        }
+        @if (!isEdit) {
+          {{ user.email }}
+        }
+      </div>
     </div>
     <div class="info-group">
       <label class="info-label">Имя</label>
-      <div class="info-value">{{ user.firstname }}</div>
+      <div class="info-value">
+        @if (isEdit) {
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="user.firstname">
+          @if (isRequired(user.firstname)) {
+            <div class="validation-error">Поле обязательно</div>
+          }
+        }
+        @if (!isEdit) {
+          {{ user.firstname }}
+        }
+      </div>
     </div>
     <div class="info-group">
       <label class="info-label">Фамилия</label>
-      <div class="info-value">{{ user.lastname }}</div>
+      <div class="info-value">
+        @if (isEdit) {
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="user.lastname">
+          @if (isRequired(user.lastname)) {
+            <div class="validation-error">Поле обязательно</div>
+          }
+        }
+        @if (!isEdit) {
+          {{ user.lastname }}
+        }
+      </div>
     </div>
     <div class="info-group">
       <label class="info-label">Номер телефона</label>
-      <div class="info-value">{{ user.phoneNumber }}</div>
+      <div class="info-value">@if (isEdit) {
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="user.phoneNumber"
+          mask="(000) 000-0000"
+          prefix="+7 ">
+        @if (isRequired(user.phoneNumber)) {
+          <div class="validation-error">Поле обязательно</div>
+        }
+      }
+        @if (!isEdit) {
+          {{ user.phoneNumber }}
+        }</div>
+    </div>
+    <div class="info-group">
+      <label class="info-label">Номер ВУ</label>
+      <div class="info-value">
+        @if (isEdit) {
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="user.drvLicenseNumber"
+          mask="00-00-000000"
+          [dropSpecialCharacters] = false>
+        @if (isRequired(user.drvLicenseNumber)) {
+          <div class="validation-error">Поле обязательно</div>
+        }
+      }
+        @if (!isEdit) {
+          {{ user.drvLicenseNumber }}
+        }</div>
     </div>
     <div class="info-group">
       <label class="info-label">Дата регистрации</label>
       <div class="info-value">{{ user.registerDate | date:'dd.MM.yyyy' }}</div>
     </div>
-    <button (click)="logout()" [routerLink]="['']" class="login-btn" >
-      Выйти
-    </button>
+    @if (errorMessage) {
+      <div class="alert alert-error">
+        {{ errorMessage }}
+        <button type="button" class="alert-close" (click)="errorMessage = ''">×</button>
+      </div>
+    }
+    @if (!isEdit) {
+      <button (click)="onEdit()" class="login-btn" >
+        Редактировать
+      </button>
+      <button (click)="logout()" [routerLink]="['']" class="delete-btn" >
+        Выйти
+      </button>
+    } @else {
+      <button (click)="onUpdate(user)" [disabled]="isValid(user)" class="login-btn" >
+        Обновить
+      </button>
+      <button (click)="onCancel()" class="delete-btn" >
+        Отменить
+      </button>
+    }
   </div>
 }
 

@@ -22,30 +22,11 @@ export class CarComponent {
   @Output() delete = new EventEmitter<number>();
   @Output() update = new EventEmitter<Car>();
   isEdit: boolean = false;
-  @ViewChild('brand') brandModel!: NgModel;
-  @ViewChild('model') modelModel!: NgModel;
-  @ViewChild('regNumber') regNumberModel!: NgModel;
-  @ViewChild('year') yearModel!: NgModel;
 
-  isBrandInvalid = false;
-  isModelInvalid = false;
-  isRegNumberInvalid = false;
-  isYearInvalid = false;
-
-  checkBrand() {
-    this.isBrandInvalid = this.brandModel?.invalid || false;
-  }
-  checkModel() {
-    this.isModelInvalid = this.modelModel?.invalid || false;
-  }
-  checkRegNumber() {
-    this.isRegNumberInvalid = this.regNumberModel?.invalid || false;
-  }
-  checkYear() {
-    this.isYearInvalid = this.yearModel?.invalid || false;
-  }
-
-  constructor(private carService: CarService) {}
+  public customPatterns = {
+    X: { pattern: new RegExp('[АВЕКМНОРСТУХ]') },
+    '0': { pattern: new RegExp('[d{0-9}]') },
+  };
 
   protected onDelete() {
     this.delete.emit(this.car.carId);
@@ -59,11 +40,44 @@ export class CarComponent {
     this.isEdit = false;
   }
 
-  protected onSubmit() {}
-
   protected onUpdate() {
     this.update.emit(this.car);
   }
 
-  protected readonly disabled = disabled;
+  isRequired(item: any) {
+    if (item == '') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  isRegNumber(item: any) {
+    if (item.length == 8 || item.length == 9) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  isYear(item: any) {
+    if (item.toString().length != 4) {
+      if(item < 2016){
+        return "Машина не должна быть старше 10 лет!"
+      }else{
+        return "Введите корректный год!";
+      }
+    } else {
+      return "";
+    }
+  }
+
+  isValid(car: Car){
+    if(this.isRequired(car.carBrand) || this.isRequired(car.carModel) || this.isRegNumber(car.carRegistrationNumber) || car.year < 2016 || car.year.toString().length != 4){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
 }

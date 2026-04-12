@@ -16,7 +16,7 @@
 }
 
 .form-control {
-  width: 60%;
+  width: 80%;
   padding: 8px 10px;
   border: 2px solid #e2e8f0;
   border-radius: 8px;
@@ -24,6 +24,12 @@
   transition: all 0.3s ease;
   box-sizing: border-box;
 }
+.validation-error {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
 
 .form-control:focus {
   outline: none;
