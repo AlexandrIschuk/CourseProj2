@@ -48,6 +48,7 @@
         formControlName="carRegistrationNumber"
         [patterns]="customPatterns"
         mask="X000XX000"
+        [validation]="false"
         placeholder="A000AA000"
 
         [class.is-invalid]="carRegistrationNumber?.invalid && carRegistrationNumber?.touched">

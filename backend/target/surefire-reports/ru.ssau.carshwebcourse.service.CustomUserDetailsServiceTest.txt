@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ru.ssau.carshwebcourse.service.CustomUserDetailsServiceTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.388 s -- in ru.ssau.carshwebcourse.service.CustomUserDetailsServiceTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.182 s -- in ru.ssau.carshwebcourse.service.CustomUserDetailsServiceTest

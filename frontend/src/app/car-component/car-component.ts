@@ -22,6 +22,7 @@ export class CarComponent {
   @Output() delete = new EventEmitter<number>();
   @Output() update = new EventEmitter<Car>();
   isEdit: boolean = false;
+  originalCar!: Car;
 
   public customPatterns = {
     X: { pattern: new RegExp('[АВЕКМНОРСТУХ]') },
@@ -33,11 +34,14 @@ export class CarComponent {
   }
 
   protected onEdit() {
+    this.originalCar = {...this.car};
     this.isEdit = true;
   }
 
   protected onCancel() {
     this.isEdit = false;
+    this.car = {...this.originalCar};
+
   }
 
   protected onUpdate() {

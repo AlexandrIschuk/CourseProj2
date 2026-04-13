@@ -60,4 +60,14 @@ public class TariffControllerTest {
         assertEquals("Tariff 2", tariff.getName());
     }
 
+    @Test
+    void updateTariff(){
+        TariffDto newTariff = new TariffDto();
+        newTariff.setName("Tariff Update");
+        newTariff.setTariffType(TariffType.MINUTE);
+        TariffDto updated = tariffController.updateTariff(tariffId,newTariff).getBody();
+        assertEquals("Tariff Update", updated.getName());
+        assertEquals(TariffType.MINUTE, updated.getTariffType());
+    }
+
 }

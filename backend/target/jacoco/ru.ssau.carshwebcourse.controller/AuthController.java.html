@@ -54,12 +54,12 @@ public class AuthController {
 
     @GetMapping(&quot;/me&quot;)
     public ResponseEntity&lt;UserDto&gt; getAuthUser(@AuthenticationPrincipal UserDetails user) {
-<span class="nc" id="L57">        UserDto userDto = new UserDto();</span>
-<span class="nc" id="L58">        Set&lt;Role&gt; roles = user.getAuthorities().stream()</span>
-<span class="nc" id="L59">                .map(role -&gt; new Role(UserRole.valueOf(role.getAuthority())))</span>
-<span class="nc" id="L60">                .collect(Collectors.toSet());</span>
-<span class="nc" id="L61">        userDto = userDetailsService.getUserByEmail(user.getUsername());</span>
-<span class="nc" id="L62">        return ResponseEntity.ok(userDto);</span>
+<span class="fc" id="L57">        UserDto userDto = new UserDto();</span>
+<span class="fc" id="L58">        Set&lt;Role&gt; roles = user.getAuthorities().stream()</span>
+<span class="fc" id="L59">                .map(role -&gt; new Role(UserRole.valueOf(role.getAuthority())))</span>
+<span class="fc" id="L60">                .collect(Collectors.toSet());</span>
+<span class="fc" id="L61">        userDto = userDetailsService.getUserByEmail(user.getUsername());</span>
+<span class="fc" id="L62">        return ResponseEntity.ok(userDto);</span>
     }
 
     @PostMapping(&quot;/refresh&quot;)

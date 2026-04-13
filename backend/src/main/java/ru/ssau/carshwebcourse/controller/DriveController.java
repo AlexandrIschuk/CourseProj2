@@ -35,9 +35,9 @@ public class DriveController {
 
     @GetMapping
     @ResponseBody
-    public List<DriveDto> findAllDrivesByUser(@AuthenticationPrincipal UserDetails userDetails){
+    public List<DriveDto> getHistoryDrivesByUser(@AuthenticationPrincipal UserDetails userDetails){
         UserDto user = customUserDetailsService.getUserByEmail(userDetails.getUsername());
-        return driveService.findAllDrivesByUser(user);
+        return driveService.getHistoryDrivesByUser(user);
     }
     @GetMapping("/all")
     @ResponseBody

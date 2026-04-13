@@ -23,19 +23,19 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrl: './user-component.css',
 })
 export class UserComponent {
-  protected user?: User;
+  protected user!: User;
   isEdit = false;
   protected errorMessage = '';
   constructor(
     private authService: AuthService,
     private cd: ChangeDetectorRef,
-    private userService: UserService
+    private userService: UserService,
   ) {
     this.authService = authService;
     this.cd = cd;
     this.loadUserInfo();
   }
-  loadUserInfo(){
+  loadUserInfo() {
     this.authService.profile().subscribe({
       next: (response) => {
         this.user = response;
@@ -49,11 +49,14 @@ export class UserComponent {
   }
 
   protected onEdit() {
+    this.user = {...this.user,phoneNumber: this.user.phoneNumber.slice(2)}
     this.isEdit = true;
   }
 
   protected onCancel() {
     this.isEdit = false;
+    this.loadUserInfo();
+    this.cd.detectChanges();
   }
 
   protected onUpdate(user: User) {
@@ -64,24 +67,30 @@ export class UserComponent {
         this.cd.detectChanges();
       },
       error: (err: HttpErrorResponse) => {
-        if(err.status == 409){
-          this.errorMessage = "Пользователь уже существует!";
+        if (err.status == 409) {
+          this.errorMessage = 'Пользователь уже существует!';
           this.cd.detectChanges();
         }
-      }
-    })
+      },
+    });
   }
 
   protected isRequired(item: any) {
-    if(item == ''){
+    if (item == '') {
       return true;
-    }else {
+    } else {
       return false;
     }
   }
 
   protected isValid(user: User) {
-    if(this.isRequired(user.email) || this.isRequired(user.firstname) || this.isRequired(user.lastname) || this.isRequired(user.phoneNumber) || this.isRequired(user.drvLicenseNumber)){
+    if (
+      this.isRequired(user.email) ||
+      this.isRequired(user.firstname) ||
+      this.isRequired(user.lastname) ||
+      this.isRequired(user.phoneNumber) ||
+      this.isRequired(user.drvLicenseNumber)
+    ) {
       return true;
     } else {
       return false;

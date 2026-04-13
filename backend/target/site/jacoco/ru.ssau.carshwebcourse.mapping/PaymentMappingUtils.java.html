@@ -7,25 +7,25 @@ import ru.ssau.carshwebcourse.entity.Payment;
 @Component
 <span class="fc" id="L8">public class PaymentMappingUtils {</span>
     public Payment mapToPaymentEntity(PaymentDto payment){
-<span class="nc" id="L10">        Payment entity = new Payment();</span>
-<span class="nc" id="L11">        entity.setPaymentId(payment.getPaymentId());</span>
-<span class="nc" id="L12">        entity.setDrive(payment.getDrive());</span>
-<span class="nc" id="L13">        entity.setPaymentAmount(payment.getPaymentAmount());</span>
-<span class="nc" id="L14">        entity.setPaymentMethod(payment.getPaymentMethod());</span>
-<span class="nc" id="L15">        entity.setPaymentDate(payment.getPaymentDate());</span>
-<span class="nc" id="L16">        entity.setPaymentStatus(payment.getPaymentStatus());</span>
-<span class="nc" id="L17">        return entity;</span>
+<span class="fc" id="L10">        Payment entity = new Payment();</span>
+<span class="fc" id="L11">        entity.setPaymentId(payment.getPaymentId());</span>
+<span class="fc" id="L12">        entity.setDrive(payment.getDrive());</span>
+<span class="fc" id="L13">        entity.setPaymentAmount(payment.getPaymentAmount());</span>
+<span class="fc" id="L14">        entity.setPaymentMethod(payment.getPaymentMethod());</span>
+<span class="fc" id="L15">        entity.setPaymentDate(payment.getPaymentDate());</span>
+<span class="fc" id="L16">        entity.setPaymentStatus(payment.getPaymentStatus());</span>
+<span class="fc" id="L17">        return entity;</span>
     }
 
     public PaymentDto mapToPaymentDto(Payment entity){
-<span class="nc" id="L21">        PaymentDto paymentDto = new PaymentDto();</span>
-<span class="nc" id="L22">        paymentDto.setPaymentId(entity.getPaymentId());</span>
-<span class="nc" id="L23">        paymentDto.setDrive(entity.getDrive());</span>
-<span class="nc" id="L24">        paymentDto.setPaymentAmount(entity.getPaymentAmount());</span>
-<span class="nc" id="L25">        paymentDto.setPaymentMethod(entity.getPaymentMethod());</span>
-<span class="nc" id="L26">        paymentDto.setPaymentDate(entity.getPaymentDate());</span>
-<span class="nc" id="L27">        paymentDto.setPaymentStatus(entity.getPaymentStatus());</span>
-<span class="nc" id="L28">        return paymentDto;</span>
+<span class="fc" id="L21">        PaymentDto paymentDto = new PaymentDto();</span>
+<span class="fc" id="L22">        paymentDto.setPaymentId(entity.getPaymentId());</span>
+<span class="fc" id="L23">        paymentDto.setDrive(entity.getDrive());</span>
+<span class="fc" id="L24">        paymentDto.setPaymentAmount(entity.getPaymentAmount());</span>
+<span class="fc" id="L25">        paymentDto.setPaymentMethod(entity.getPaymentMethod());</span>
+<span class="fc" id="L26">        paymentDto.setPaymentDate(entity.getPaymentDate());</span>
+<span class="fc" id="L27">        paymentDto.setPaymentStatus(entity.getPaymentStatus());</span>
+<span class="fc" id="L28">        return paymentDto;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

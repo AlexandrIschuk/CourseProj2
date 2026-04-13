@@ -1,9 +1,9 @@
-@if (showAdminInfo) {
+<!--@if (showAdminInfo) {
   <td class="td">{{ drive.driveId }}</td>
 }
 @if (showAdminInfo) {
   <td class="td">{{ drive.userId }}</td>
-}
+}-->
 <td class="td">{{ drive.car.carBrand }} {{ drive.car.carModel }} {{ drive.car.year }}</td>
 <td class="td">{{ drive.car.carRegistrationNumber }}</td>
 <td class="td">{{ drive.tariff.name }}</td>
@@ -13,7 +13,11 @@
 }
 <td class="td">{{ drive.totalDistance }}</td>
 @if(showTotalAmount){
-  <td class="td">{{ drive.totalAmount }} Рублей</td>
+  <td class="td">
+    @if (drive.totalAmount != null) {
+      {{ drive.totalAmount }} Рублей
+    }
+  </td>
 
 }
 <td class="td">

@@ -35,7 +35,7 @@ public class UserController {
 
     @PutMapping(&quot;/{email}&quot;)
     public ResponseEntity&lt;UserDto&gt; updateUser(@PathVariable String email, @RequestBody UserDto user){
-<span class="nc" id="L38">        return new ResponseEntity&lt;&gt;(customUserDetailsService.updateUser(email,user), HttpStatus.OK);</span>
+<span class="fc" id="L38">        return new ResponseEntity&lt;&gt;(customUserDetailsService.updateUser(email,user), HttpStatus.OK);</span>
     }
 
 }

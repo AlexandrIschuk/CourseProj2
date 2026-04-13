@@ -14,6 +14,7 @@ export class TariffComponent {
   @Output() delete = new EventEmitter<number>();
   @Output() update = new EventEmitter<Tariff>();
   isEdit: boolean = false;
+  originalTariff!: Tariff;
 
   methods = [
     { value: 'MINUTE', label: 'По минутам' },
@@ -25,6 +26,7 @@ export class TariffComponent {
   }
 
   onEdit() {
+    this.originalTariff = {...this.tariff};
     this.isEdit = true;
   }
 
@@ -34,6 +36,7 @@ export class TariffComponent {
 
   protected onCancel() {
     this.isEdit = false;
+    this.tariff = {...this.originalTariff};
   }
 
   protected isRequired(item: any) {

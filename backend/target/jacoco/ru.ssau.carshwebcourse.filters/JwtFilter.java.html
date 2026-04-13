@@ -19,6 +19,7 @@ import ru.ssau.carshwebcourse.exceptionHandler.TokenCreatedTimeException;
 import ru.ssau.carshwebcourse.service.CustomUserDetailsService;
 import ru.ssau.carshwebcourse.service.TokenService;
 
+import javax.security.sasl.AuthenticationException;
 import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -35,7 +36,7 @@ public class JwtFilter extends OncePerRequestFilter {
     private CustomUserDetailsService customUserDetailsService;
     private final HandlerExceptionResolver resolver;
 
-<span class="fc" id="L38">    private static final List&lt;String&gt; PUBLIC_PATHS = Arrays.asList(</span>
+<span class="fc" id="L39">    private static final List&lt;String&gt; PUBLIC_PATHS = Arrays.asList(</span>
             &quot;/&quot;,
             &quot;/index.html&quot;,
             &quot;/main.js&quot;,
@@ -58,53 +59,53 @@ public class JwtFilter extends OncePerRequestFilter {
             &quot;/api/public/&quot;
     );
 
-<span class="fc" id="L61">    private static final List&lt;String&gt; STATIC_EXTENSIONS = Arrays.asList(</span>
+<span class="fc" id="L62">    private static final List&lt;String&gt; STATIC_EXTENSIONS = Arrays.asList(</span>
             &quot;.js&quot;, &quot;.css&quot;, &quot;.html&quot;, &quot;.ico&quot;, &quot;.png&quot;, &quot;.jpg&quot;, &quot;.jpeg&quot;, &quot;.svg&quot;, &quot;.gif&quot;, &quot;.webp&quot;,
             &quot;.json&quot;, &quot;.xml&quot;, &quot;.txt&quot;, &quot;.pdf&quot;, &quot;.woff&quot;, &quot;.woff2&quot;, &quot;.ttf&quot;, &quot;.eot&quot;
     );
 
     public JwtFilter(TokenService tokenService,
-<span class="fc" id="L67">                     @Qualifier(&quot;handlerExceptionResolver&quot;) HandlerExceptionResolver resolver) {</span>
-<span class="fc" id="L68">        this.tokenService = tokenService;</span>
-<span class="fc" id="L69">        this.resolver = resolver;</span>
-<span class="fc" id="L70">    }</span>
+<span class="fc" id="L68">                     @Qualifier(&quot;handlerExceptionResolver&quot;) HandlerExceptionResolver resolver) {</span>
+<span class="fc" id="L69">        this.tokenService = tokenService;</span>
+<span class="fc" id="L70">        this.resolver = resolver;</span>
+<span class="fc" id="L71">    }</span>
 
     @Autowired
     public void setCustomUserDetailsService(CustomUserDetailsService customUserDetailsService) {
-<span class="fc" id="L74">        this.customUserDetailsService = customUserDetailsService;</span>
-<span class="fc" id="L75">    }</span>
+<span class="fc" id="L75">        this.customUserDetailsService = customUserDetailsService;</span>
+<span class="fc" id="L76">    }</span>
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
-<span class="nc" id="L79">        String path = request.getRequestURI();</span>
+<span class="nc" id="L80">        String path = request.getRequestURI();</span>
 
-<span class="nc" id="L81">        return isPublicPath(path);</span>
+<span class="nc" id="L82">        return isPublicPath(path);</span>
     }
 
     private boolean isPublicPath(String path) {
-<span class="nc bnc" id="L85" title="All 2 branches missed.">        if (PUBLIC_PATHS.contains(path)) {</span>
-<span class="nc" id="L86">            return true;</span>
+<span class="nc bnc" id="L86" title="All 2 branches missed.">        if (PUBLIC_PATHS.contains(path)) {</span>
+<span class="nc" id="L87">            return true;</span>
         }
 
-<span class="nc bnc" id="L89" title="All 2 branches missed.">        if (path.startsWith(&quot;/api/public/&quot;)) {</span>
-<span class="nc" id="L90">            return true;</span>
+<span class="nc bnc" id="L90" title="All 2 branches missed.">        if (path.startsWith(&quot;/api/public/&quot;)) {</span>
+<span class="nc" id="L91">            return true;</span>
         }
 
-<span class="nc bnc" id="L93" title="All 2 branches missed.">        for (String extension : STATIC_EXTENSIONS) {</span>
-<span class="nc bnc" id="L94" title="All 2 branches missed.">            if (path.endsWith(extension)) {</span>
-<span class="nc" id="L95">                return true;</span>
+<span class="nc bnc" id="L94" title="All 2 branches missed.">        for (String extension : STATIC_EXTENSIONS) {</span>
+<span class="nc bnc" id="L95" title="All 2 branches missed.">            if (path.endsWith(extension)) {</span>
+<span class="nc" id="L96">                return true;</span>
             }
-<span class="nc" id="L97">        }</span>
+<span class="nc" id="L98">        }</span>
 
-<span class="nc bnc" id="L99" title="All 2 branches missed.">        if (path.startsWith(&quot;/assets/&quot;)) {</span>
-<span class="nc" id="L100">            return true;</span>
+<span class="nc bnc" id="L100" title="All 2 branches missed.">        if (path.startsWith(&quot;/assets/&quot;)) {</span>
+<span class="nc" id="L101">            return true;</span>
         }
 
-<span class="nc bnc" id="L103" title="All 4 branches missed.">        if (path.isEmpty() || path.equals(&quot;/&quot;)) {</span>
-<span class="nc" id="L104">            return true;</span>
+<span class="nc bnc" id="L104" title="All 4 branches missed.">        if (path.isEmpty() || path.equals(&quot;/&quot;)) {</span>
+<span class="nc" id="L105">            return true;</span>
         }
 
-<span class="nc" id="L107">        return false;</span>
+<span class="nc" id="L108">        return false;</span>
     }
 
     @Override
@@ -113,57 +114,57 @@ public class JwtFilter extends OncePerRequestFilter {
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
         try {
-<span class="nc" id="L116">            String path = request.getRequestURI();</span>
+<span class="nc" id="L117">            String path = request.getRequestURI();</span>
 
-<span class="nc bnc" id="L118" title="All 2 branches missed.">            if (isPublicPath(path)) {</span>
-<span class="nc" id="L119">                filterChain.doFilter(request, response);</span>
-<span class="nc" id="L120">                return;</span>
+<span class="nc bnc" id="L119" title="All 2 branches missed.">            if (isPublicPath(path)) {</span>
+<span class="nc" id="L120">                filterChain.doFilter(request, response);</span>
+<span class="nc" id="L121">                return;</span>
             }
 
-<span class="nc" id="L123">            String authHeader = request.getHeader(HEADER_NAME);</span>
+<span class="nc" id="L124">            String authHeader = request.getHeader(HEADER_NAME);</span>
 
-<span class="nc bnc" id="L125" title="All 2 branches missed.">            if (authHeader == null) {</span>
-<span class="nc" id="L126">                throw new InvalidTokenException(&quot;Token is missing or not Access token&quot;);</span>
+<span class="nc bnc" id="L126" title="All 2 branches missed.">            if (authHeader == null) {</span>
+<span class="nc" id="L127">                throw new InvalidTokenException(&quot;Token is missing or not Access token&quot;);</span>
             }
 
-<span class="nc bnc" id="L129" title="All 2 branches missed.">            if (!authHeader.startsWith(BEARER_PREFIX)) {</span>
-<span class="nc" id="L130">                throw new InvalidTokenException(&quot;Invalid authorization header format&quot;);</span>
+<span class="nc bnc" id="L130" title="All 2 branches missed.">            if (!authHeader.startsWith(BEARER_PREFIX)) {</span>
+<span class="nc" id="L131">                throw new InvalidTokenException(&quot;Invalid authorization header format&quot;);</span>
             }
 
-<span class="nc" id="L133">            String jwt = authHeader.substring(BEARER_PREFIX.length());</span>
-<span class="nc" id="L134">            Map&lt;String, Object&gt; payload = tokenService.getDecodePayload(jwt);</span>
+<span class="nc" id="L134">            String jwt = authHeader.substring(BEARER_PREFIX.length());</span>
+<span class="nc" id="L135">            Map&lt;String, Object&gt; payload = tokenService.getDecodePayload(jwt);</span>
 
-<span class="nc bnc" id="L136" title="All 2 branches missed.">            if (!payload.containsKey(&quot;roles&quot;)) {</span>
-<span class="nc" id="L137">                throw new InvalidTokenException(&quot;Token is not Access token&quot;);</span>
+<span class="nc bnc" id="L137" title="All 2 branches missed.">            if (!payload.containsKey(&quot;roles&quot;)) {</span>
+<span class="nc" id="L138">                throw new InvalidTokenException(&quot;Token is not Access token&quot;);</span>
             }
 
-<span class="nc" id="L140">            String email = payload.get(&quot;email&quot;).toString();</span>
-<span class="nc" id="L141">            long iat = Long.parseLong(payload.get(&quot;iat&quot;).toString());</span>
+<span class="nc" id="L141">            String email = payload.get(&quot;email&quot;).toString();</span>
+<span class="nc" id="L142">            long iat = Long.parseLong(payload.get(&quot;iat&quot;).toString());</span>
 
-<span class="nc bnc" id="L143" title="All 2 branches missed.">            if (tokenService.getCreateTime() == null) {</span>
-<span class="nc" id="L144">                throw new TokenCreatedTimeException(&quot;Server restart, please login again&quot;);</span>
+<span class="nc bnc" id="L144" title="All 2 branches missed.">            if (tokenService.getCreateTime() == null) {</span>
+<span class="nc" id="L145">                throw new TokenCreatedTimeException(&quot;Server restart, please login again&quot;);</span>
             }
 
-<span class="nc bnc" id="L147" title="All 2 branches missed.">            if (tokenService.getCreateTime() != iat) {</span>
-<span class="nc" id="L148">                throw new InvalidTokenException(&quot;The token is old&quot;);</span>
+<span class="nc bnc" id="L148" title="All 2 branches missed.">            if (tokenService.getCreateTime() != iat) {</span>
+<span class="nc" id="L149">                throw new InvalidTokenException(&quot;The token is old&quot;);</span>
             }
 
-<span class="nc" id="L151">            UserDetails userDetails = customUserDetailsService.loadUserByUsername(email);</span>
-<span class="nc" id="L152">            SecurityContext context = SecurityContextHolder.createEmptyContext();</span>
-<span class="nc" id="L153">            UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(</span>
+<span class="nc" id="L152">            UserDetails userDetails = customUserDetailsService.loadUserByUsername(email);</span>
+<span class="nc" id="L153">            SecurityContext context = SecurityContextHolder.createEmptyContext();</span>
+<span class="nc" id="L154">            UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(</span>
                     userDetails,
                     null,
-<span class="nc" id="L156">                    userDetails.getAuthorities()</span>
+<span class="nc" id="L157">                    userDetails.getAuthorities()</span>
             );
-<span class="nc" id="L158">            context.setAuthentication(authToken);</span>
-<span class="nc" id="L159">            SecurityContextHolder.setContext(context);</span>
+<span class="nc" id="L159">            context.setAuthentication(authToken);</span>
+<span class="nc" id="L160">            SecurityContextHolder.setContext(context);</span>
 
-<span class="nc" id="L161">            filterChain.doFilter(request, response);</span>
+<span class="nc" id="L162">            filterChain.doFilter(request, response);</span>
 
-<span class="nc" id="L163">        } catch (InvalidTokenException | NoSuchAlgorithmException | InvalidKeyException |</span>
+<span class="nc" id="L164">        } catch (InvalidTokenException | NoSuchAlgorithmException | InvalidKeyException |</span>
                  TokenCreatedTimeException | ArrayIndexOutOfBoundsException e) {
-<span class="nc" id="L165">            resolver.resolveException(request, response, null, e);</span>
-<span class="nc" id="L166">        }</span>
-<span class="nc" id="L167">    }</span>
+<span class="nc" id="L166">            resolver.resolveException(request, response, null, e);</span>
+<span class="nc" id="L167">        }</span>
+<span class="nc" id="L168">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

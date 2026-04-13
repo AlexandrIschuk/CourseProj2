@@ -150,25 +150,145 @@ public class DriveServiceTest {
         assertThrows(IllegalStateException.class, () -> driveService.cancelDrive(2L));
     }
 
+    @Test
+    void testUpdateDriveStatus_ToPendingPayment_WithMinuteTariff() {
+        Long driveId = 1L;
+
+        Tariff tariff = new Tariff();
+        tariff.setTariffType(TariffType.MINUTE);
+        tariff.setPrice(100L);
+
+        Drive existingDrive = new Drive();
+        existingDrive.setDriveId(driveId);
+        existingDrive.setDriveStatus(DriveStatus.ACTIVE);
+        existingDrive.setTariff(tariff);
+        existingDrive.setStartRental(LocalDateTime.now().minusMinutes(30));
+
+        DriveDto updateDto = new DriveDto();
+        updateDto.setDriveStatus(DriveStatus.PENDING_PAYMENT);
+
+        when(driveRepository.findById(driveId)).thenReturn(Optional.of(existingDrive));
+        when(driveRepository.save(existingDrive)).thenReturn(existingDrive);
+        when(driveMappingUtils.mapToDriveDto(existingDrive)).thenReturn(new DriveDto());
+
+        DriveDto result = driveService.updateDriveStatus(driveId, updateDto);
+
+        assertNotNull(result);
+        assertEquals(DriveStatus.PENDING_PAYMENT, existingDrive.getDriveStatus());
+        assertNotNull(existingDrive.getEndRental());
+        assertEquals(30L, existingDrive.getTotalDistance().longValue());
+        assertEquals(3000L, existingDrive.getTotalAmount().longValue());
+
+    }
+
+    @Test
+    void testUpdateDriveStatus_ToPendingPayment_WithKilometerTariff() {
+        Long driveId = 1L;
+
+        Tariff tariff = new Tariff();
+        tariff.setTariffType(TariffType.KILOMETER);
+        tariff.setPrice(50L);
+
+        Drive existingDrive = new Drive();
+        existingDrive.setDriveId(driveId);
+        existingDrive.setDriveStatus(DriveStatus.ACTIVE);
+        existingDrive.setTariff(tariff);
+        existingDrive.setStartRental(LocalDateTime.now());
+
+        DriveDto updateDto = new DriveDto();
+        updateDto.setDriveStatus(DriveStatus.PENDING_PAYMENT);
+        updateDto.setTotalDistance(100L);
+
+        when(driveRepository.findById(driveId)).thenReturn(Optional.of(existingDrive));
+        when(driveRepository.save(existingDrive)).thenReturn(existingDrive);
+        when(driveMappingUtils.mapToDriveDto(existingDrive)).thenReturn(new DriveDto());
+
+        DriveDto result = driveService.updateDriveStatus(driveId, updateDto);
+
+        assertNotNull(result);
+        assertEquals(DriveStatus.PENDING_PAYMENT, existingDrive.getDriveStatus());
+        assertEquals(100L, existingDrive.getTotalDistance().longValue());
+        assertEquals(5000L, existingDrive.getTotalAmount().longValue());
+
+    }
+
+    @Test
+    void testUpdateDriveStatus_ToOtherStatus_NoCalculation() {
+        Long driveId = 1L;
+
+        Drive existingDrive = new Drive();
+        existingDrive.setDriveId(driveId);
+        existingDrive.setDriveStatus(DriveStatus.ACTIVE);
+
+        DriveDto updateDto = new DriveDto();
+        updateDto.setDriveStatus(DriveStatus.CANCELLED);
+
+        when(driveRepository.findById(driveId)).thenReturn(Optional.of(existingDrive));
+        when(driveRepository.save(existingDrive)).thenReturn(existingDrive);
+        when(driveMappingUtils.mapToDriveDto(existingDrive)).thenReturn(new DriveDto());
+
+        DriveDto result = driveService.updateDriveStatus(driveId, updateDto);
+
+        assertNotNull(result);
+        assertEquals(DriveStatus.CANCELLED, existingDrive.getDriveStatus());
+        assertNull(existingDrive.getEndRental());
+        assertNull(existingDrive.getTotalDistance());
+        assertNull(existingDrive.getTotalAmount());
+
+    }
+
+
 //    @Test
 //    void testFindAllDrivesByUser() {
+//        // Arrange
+//        User user = new User();
+//        user.setUserId(1L);
+//
 //        Drive drive1 = new Drive();
+//        drive1.setDriveId(1L);
 //        drive1.setDriveStatus(DriveStatus.COMPLETED);
-//        drive1.setUser(user);
 //
 //        Drive drive2 = new Drive();
+//        drive2.setDriveId(2L);
 //        drive2.setDriveStatus(DriveStatus.CANCELLED);
-//        drive2.setUser(user);
 //
 //        List<Drive> drives = List.of(drive1, drive2);
 //
 //        when(userMappingUtils.mapToUserEntity(userDto)).thenReturn(user);
-//        when(driveRepository.findDriveHistoryByUser(any(User.class))).thenReturn(drives);
-//        when(driveMappingUtils.mapToDriveDto(any())).thenReturn(new DriveDto());
+//        when(driveRepository.findDriveHistoryByUser(user)).thenReturn(drives);
+//        when(driveMappingUtils.mapToDriveDto(any(Drive.class))).thenReturn(new DriveDto());
 //
 //        List<DriveDto> result = driveService.findAllDrivesByUser(userDto);
 //
+//        assertNotNull(result);
 //        assertEquals(2, result.size());
+//
+//
 //    }
-
+//
+//    @Test
+//    void testFindActiveDrives() {
+//        User user = new User();
+//        user.setUserId(1L);
+//
+//        Drive activeDrive1 = new Drive();
+//        activeDrive1.setDriveId(1L);
+//        activeDrive1.setDriveStatus(DriveStatus.ACTIVE);
+//
+//        Drive activeDrive2 = new Drive();
+//        activeDrive2.setDriveId(2L);
+//        activeDrive2.setDriveStatus(DriveStatus.ACTIVE);
+//
+//        List<Drive> activeDrives = List.of(activeDrive1, activeDrive2);
+//
+//        when(userMappingUtils.mapToUserEntity(userDto)).thenReturn(user);
+//        when(driveRepository.findDriveByDriveStatusAndUser(user)).thenReturn(activeDrives);
+//        when(driveMappingUtils.mapToDriveDto(any(Drive.class))).thenReturn(new DriveDto());
+//
+//        List<DriveDto> result = driveService.findActiveDrives(userDto);
+//
+//        assertNotNull(result);
+//        assertEquals(2, result.size());
+//
+//    }
 }

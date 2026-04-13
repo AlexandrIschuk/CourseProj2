@@ -10,11 +10,11 @@ export class CarService{
   }
 
   public getFreeCar(): Observable<Car[]>{
-    return this._httpClient.get<Car[]>(`${environment.apiUrl}/cars/free`);
+    return this._httpClient.get<Car[]>(`${environment.apiUrl}/cars`);
   }
 
   public getAllCars(): Observable<Car[]>{
-    return this._httpClient.get<Car[]>(`${environment.apiUrl}/cars`);
+    return this._httpClient.get<Car[]>(`${environment.apiUrl}/cars/all`);
   }
 
   public deleteCar(id: number){

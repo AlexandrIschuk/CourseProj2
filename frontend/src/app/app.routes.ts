@@ -13,7 +13,7 @@ import {AllDrivesComponent} from './all-drives-component/all-drives-component';
 
 export const routes: Routes = [
   {path: '', component: LoginComponent},
-  {path: 'registration', component: RegistrationComponent},
+  {path: 'register', component: RegistrationComponent},
   {path: 'drives', component: DriveActiveListComponent},
   {path: 'drives/history', component: DriveListComponent},
   {path: 'me', component: UserComponent},

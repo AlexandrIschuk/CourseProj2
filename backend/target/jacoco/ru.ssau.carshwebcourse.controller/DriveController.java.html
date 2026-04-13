@@ -29,42 +29,42 @@ public class DriveController {
 <span class="fc" id="L29">    }</span>
     @PostMapping
     public ResponseEntity&lt;DriveDto&gt; startDrive(@RequestBody DriveDto driveDto, @AuthenticationPrincipal UserDetails userDetails){
-<span class="nc" id="L32">        driveDto.setUserId(customUserDetailsService.getUserByEmail(userDetails.getUsername()).getUserId());</span>
-<span class="nc" id="L33">        return new ResponseEntity&lt;&gt;(driveService.startDrive(driveDto), HttpStatus.CREATED);</span>
+<span class="fc" id="L32">        driveDto.setUserId(customUserDetailsService.getUserByEmail(userDetails.getUsername()).getUserId());</span>
+<span class="fc" id="L33">        return new ResponseEntity&lt;&gt;(driveService.startDrive(driveDto), HttpStatus.CREATED);</span>
     }
 
     @GetMapping
     @ResponseBody
-    public List&lt;DriveDto&gt; findAllDrivesByUser(@AuthenticationPrincipal UserDetails userDetails){
-<span class="nc" id="L39">        UserDto user = customUserDetailsService.getUserByEmail(userDetails.getUsername());</span>
-<span class="nc" id="L40">        return driveService.findAllDrivesByUser(user);</span>
+    public List&lt;DriveDto&gt; getHistoryDrivesByUser(@AuthenticationPrincipal UserDetails userDetails){
+<span class="fc" id="L39">        UserDto user = customUserDetailsService.getUserByEmail(userDetails.getUsername());</span>
+<span class="fc" id="L40">        return driveService.getHistoryDrivesByUser(user);</span>
     }
     @GetMapping(&quot;/all&quot;)
     @ResponseBody
     public List&lt;DriveDto&gt; findAllDrives(){
-<span class="nc" id="L45">        return driveService.findAllDrives();</span>
+<span class="fc" id="L45">        return driveService.findAllDrives();</span>
     }
     @GetMapping(&quot;/active&quot;)
     @ResponseBody
     public List&lt;DriveDto&gt; findActiveDrives(@AuthenticationPrincipal UserDetails userDetails ){
-<span class="nc" id="L50">        UserDto user = customUserDetailsService.getUserByEmail(userDetails.getUsername());</span>
-<span class="nc" id="L51">        return driveService.findActiveDrives(user);</span>
+<span class="fc" id="L50">        UserDto user = customUserDetailsService.getUserByEmail(userDetails.getUsername());</span>
+<span class="fc" id="L51">        return driveService.findActiveDrives(user);</span>
     }
     @PutMapping(&quot;/{id}&quot;)
     public ResponseEntity&lt;DriveDto&gt; completeDrive(@PathVariable Long id,@RequestBody DriveDto drive){
 
-<span class="nc" id="L56">        return new ResponseEntity&lt;&gt;(driveService.updateDriveStatus(id,drive),HttpStatus.OK);</span>
+<span class="fc" id="L56">        return new ResponseEntity&lt;&gt;(driveService.updateDriveStatus(id,drive),HttpStatus.OK);</span>
     }
 
     @PutMapping(&quot;/cancel/{id}&quot;)
     public ResponseEntity&lt;DriveDto&gt; cancelDrive(@PathVariable Long id){
-<span class="nc" id="L61">        return new ResponseEntity&lt;&gt;(driveService.cancelDrive(id),HttpStatus.OK);</span>
+<span class="fc" id="L61">        return new ResponseEntity&lt;&gt;(driveService.cancelDrive(id),HttpStatus.OK);</span>
     }
 
     @DeleteMapping(&quot;/{id}&quot;)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteDrive(@PathVariable Long id){
-<span class="nc" id="L67">        driveService.deleteDrive(id);</span>
-<span class="nc" id="L68">    }</span>
+<span class="fc" id="L67">        driveService.deleteDrive(id);</span>
+<span class="fc" id="L68">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

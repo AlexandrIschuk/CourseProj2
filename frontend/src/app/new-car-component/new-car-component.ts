@@ -8,11 +8,7 @@ import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-new-car-component',
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    NgxMaskDirective
-  ],
+  imports: [FormsModule, ReactiveFormsModule, NgxMaskDirective],
   templateUrl: './new-car-component.html',
   styleUrl: './new-car-component.css',
 })
@@ -21,50 +17,53 @@ export class NewCarComponent {
   errorMessage = '';
   public customPatterns = {
     'X': { pattern: new RegExp('[АВЕКМНОРСТУХ]') },
-    '0': { pattern: new RegExp('[d{0-9}]') },
-
+    '0': { pattern: new RegExp('[0-9]') }
   };
 
-  constructor(private cd: ChangeDetectorRef,private fb: FormBuilder, private carService: CarService, public ref: DynamicDialogRef,) {
+  constructor(
+    private cd: ChangeDetectorRef,
+    private fb: FormBuilder,
+    private carService: CarService,
+    public ref: DynamicDialogRef,
+  ) {
     this.newCarForm = this.fb.group({
-      carBrand: ['', [
-        Validators.required
-      ]],
-      carModel: ['', [
-        Validators.required
-      ]],
-      carRegistrationNumber: ['', [
-        Validators.required
-      ]],
-      year: ['', [
-        Validators.required, Validators.min(2016)
-      ]],
-    })
+      carBrand: ['', [Validators.required]],
+      carModel: ['', [Validators.required]],
+      carRegistrationNumber: ['', [Validators.required,Validators.min(8), Validators.max(9)]],
+      year: ['', [Validators.required, Validators.min(2016)]],
+    });
   }
 
   protected onSubmit() {
-    if(this.newCarForm.valid){
+    if (this.newCarForm.valid) {
       const newCar: Car = {
         ...this.newCarForm.value,
-        carStatus: "FREE"
-      }
+        carStatus: 'FREE',
+      };
       this.carService.addCar(newCar).subscribe({
         next: () => {
           this.ref.close();
         },
         error: (error: HttpErrorResponse) => {
-          if(error.status == 409){
-            this.errorMessage = "Автомобиль с таким номером уже существует!"
+          if (error.status == 409) {
+            this.errorMessage = 'Автомобиль с таким номером уже существует!';
             this.cd.detectChanges();
           }
-        }
-      })
+        },
+      });
     }
   }
 
-  get carBrand() {return this.newCarForm.get('carBrand');}
-  get carModel() {return this.newCarForm.get('carModel');}
-  get carRegistrationNumber() {return this.newCarForm.get('carRegistrationNumber');}
-  get year() {return this.newCarForm.get('year');}
-
+  get carBrand() {
+    return this.newCarForm.get('carBrand');
+  }
+  get carModel() {
+    return this.newCarForm.get('carModel');
+  }
+  get carRegistrationNumber() {
+    return this.newCarForm.get('carRegistrationNumber');
+  }
+  get year() {
+    return this.newCarForm.get('year');
+  }
 }

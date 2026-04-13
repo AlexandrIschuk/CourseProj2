@@ -1,0 +1,56 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-title {
+  margin: 0 0 30px 0;
+  color: #2d3748;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.button-group {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+.cancel-btn {
+  background-color: #fafafa;
+  border: 1px solid #474747;
+  color: #474747;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+.delete-btn {
+  background: linear-gradient(135deg, #474747 0%, #3f374d 100%);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  transform: translateY(-2px);
+}

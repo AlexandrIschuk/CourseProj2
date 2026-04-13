@@ -60,7 +60,7 @@ public class DriveService {
                 .map(driveMappingUtils::mapToDriveDto).collect(Collectors.toList());
     }
 
-    public List<DriveDto> findAllDrivesByUser(UserDto user){
+    public List<DriveDto> getHistoryDrivesByUser(UserDto user){
         List<Drive> drives = driveRepository.findDriveHistoryByUser(userMappingUtils.mapToUserEntity(user));
         return drives.stream()
                 .map(driveMappingUtils::mapToDriveDto).collect(Collectors.toList());

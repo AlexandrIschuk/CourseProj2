@@ -52,18 +52,18 @@ public class CustomUserDetailsService implements UserDetailsService {
 <span class="fc" id="L52">    }</span>
 
     public UserDto updateUser(String email, UserDto user){
-<span class="nc" id="L55">        User user1 = userRepository.findUserByEmail(email).orElseThrow(() -&gt; new NotFoundException(&quot;User not found&quot;));</span>
-<span class="nc" id="L56">        user1.setFirstname(user.getFirstname());</span>
-<span class="nc" id="L57">        user1.setLastname(user.getLastname());</span>
-<span class="nc" id="L58">        user1.setEmail(user.getEmail());</span>
-<span class="nc" id="L59">        user1.setPhoneNumber(&quot;+7&quot; + user.getPhoneNumber());</span>
-<span class="nc" id="L60">        user1.setDrvLicenseNumber(user.getDrvLicenseNumber());</span>
-<span class="nc" id="L61">        userRepository.save(user1);</span>
-<span class="nc" id="L62">        return userMappingUtils.mapToUserDto(user1);</span>
+<span class="pc" id="L55">        User user1 = userRepository.findUserByEmail(email).orElseThrow(() -&gt; new NotFoundException(&quot;User not found&quot;));</span>
+<span class="fc" id="L56">        user1.setFirstname(user.getFirstname());</span>
+<span class="fc" id="L57">        user1.setLastname(user.getLastname());</span>
+<span class="fc" id="L58">        user1.setEmail(user.getEmail());</span>
+<span class="fc" id="L59">        user1.setPhoneNumber(&quot;+7&quot; + user.getPhoneNumber());</span>
+<span class="fc" id="L60">        user1.setDrvLicenseNumber(user.getDrvLicenseNumber());</span>
+<span class="fc" id="L61">        userRepository.save(user1);</span>
+<span class="fc" id="L62">        return userMappingUtils.mapToUserDto(user1);</span>
     }
 
     public UserDto getUserByEmail(String email){
-<span class="nc" id="L66">        return userMappingUtils.mapToUserDto(userRepository.findUserByEmail(email).orElseThrow(() -&gt; new UsernameNotFoundException(&quot;Пользователь не существует!&quot;)));</span>
+<span class="pc" id="L66">        return userMappingUtils.mapToUserDto(userRepository.findUserByEmail(email).orElseThrow(() -&gt; new UsernameNotFoundException(&quot;Пользователь не существует!&quot;)));</span>
     }
     public UserDto getUserByUserId(Long id){
 <span class="pc" id="L69">        return userMappingUtils.mapToUserDto(userRepository.getUserByUserId(id).orElseThrow(() -&gt; new UsernameNotFoundException(&quot;Пользователь не существует!&quot;)));</span>

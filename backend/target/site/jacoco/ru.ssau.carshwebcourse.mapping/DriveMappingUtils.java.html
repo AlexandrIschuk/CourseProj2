@@ -19,34 +19,34 @@ public class DriveMappingUtils {
 <span class="fc" id="L19">    }</span>
 
     public Drive mapToDriveEntity(DriveDto driveDto){
-<span class="nc" id="L22">        Drive entity = new Drive();</span>
+<span class="fc" id="L22">        Drive entity = new Drive();</span>
 
-<span class="nc" id="L24">        User user = new User();</span>
-<span class="nc" id="L25">        user.setUserId(driveDto.getUserId());</span>
-<span class="nc" id="L26">        entity.setDriveId(driveDto.getDriveId());</span>
-<span class="nc" id="L27">        entity.setUser(user);</span>
-<span class="nc" id="L28">        entity.setCar(driveDto.getCar());</span>
-<span class="nc" id="L29">        entity.setTariff(driveDto.getTariff());</span>
-<span class="nc" id="L30">        entity.setStartRental(driveDto.getStartRental());</span>
-<span class="nc" id="L31">        entity.setEndRental(driveDto.getEndRental());</span>
-<span class="nc" id="L32">        entity.setTotalDistance(driveDto.getTotalDistance());</span>
-<span class="nc" id="L33">        entity.setTotalAmount(driveDto.getTotalAmount());</span>
-<span class="nc" id="L34">        entity.setDriveStatus(driveDto.getDriveStatus());</span>
-<span class="nc" id="L35">        return entity;</span>
+<span class="fc" id="L24">        User user = new User();</span>
+<span class="fc" id="L25">        user.setUserId(driveDto.getUserId());</span>
+<span class="fc" id="L26">        entity.setDriveId(driveDto.getDriveId());</span>
+<span class="fc" id="L27">        entity.setUser(user);</span>
+<span class="fc" id="L28">        entity.setCar(driveDto.getCar());</span>
+<span class="fc" id="L29">        entity.setTariff(driveDto.getTariff());</span>
+<span class="fc" id="L30">        entity.setStartRental(driveDto.getStartRental());</span>
+<span class="fc" id="L31">        entity.setEndRental(driveDto.getEndRental());</span>
+<span class="fc" id="L32">        entity.setTotalDistance(driveDto.getTotalDistance());</span>
+<span class="fc" id="L33">        entity.setTotalAmount(driveDto.getTotalAmount());</span>
+<span class="fc" id="L34">        entity.setDriveStatus(driveDto.getDriveStatus());</span>
+<span class="fc" id="L35">        return entity;</span>
     }
 
     public DriveDto mapToDriveDto(Drive entity){
-<span class="nc" id="L39">        DriveDto driveDto = new DriveDto();</span>
-<span class="nc" id="L40">        driveDto.setDriveId(entity.getDriveId());</span>
-<span class="nc" id="L41">        driveDto.setUserId(entity.getUser().getUserId());</span>
-<span class="nc" id="L42">        driveDto.setCar(entity.getCar());</span>
-<span class="nc" id="L43">        driveDto.setTariff(entity.getTariff());</span>
-<span class="nc" id="L44">        driveDto.setStartRental(entity.getStartRental());</span>
-<span class="nc" id="L45">        driveDto.setEndRental(entity.getEndRental());</span>
-<span class="nc" id="L46">        driveDto.setTotalDistance(entity.getTotalDistance());</span>
-<span class="nc" id="L47">        driveDto.setTotalAmount(entity.getTotalAmount());</span>
-<span class="nc" id="L48">        driveDto.setDriveStatus(entity.getDriveStatus());</span>
-<span class="nc" id="L49">        return driveDto;</span>
+<span class="fc" id="L39">        DriveDto driveDto = new DriveDto();</span>
+<span class="fc" id="L40">        driveDto.setDriveId(entity.getDriveId());</span>
+<span class="fc" id="L41">        driveDto.setUserId(entity.getUser().getUserId());</span>
+<span class="fc" id="L42">        driveDto.setCar(entity.getCar());</span>
+<span class="fc" id="L43">        driveDto.setTariff(entity.getTariff());</span>
+<span class="fc" id="L44">        driveDto.setStartRental(entity.getStartRental());</span>
+<span class="fc" id="L45">        driveDto.setEndRental(entity.getEndRental());</span>
+<span class="fc" id="L46">        driveDto.setTotalDistance(entity.getTotalDistance());</span>
+<span class="fc" id="L47">        driveDto.setTotalAmount(entity.getTotalAmount());</span>
+<span class="fc" id="L48">        driveDto.setDriveStatus(entity.getDriveStatus());</span>
+<span class="fc" id="L49">        return driveDto;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

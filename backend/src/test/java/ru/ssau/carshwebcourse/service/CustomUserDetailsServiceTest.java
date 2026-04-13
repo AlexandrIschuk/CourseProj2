@@ -29,6 +29,8 @@ class CustomUserDetailsServiceTest {
 
     private User testUser;
     private UserDto testUserDto;
+    private UserDto expectedUserDto;
+    private String testEmail;
 
     @BeforeEach
     void setUp() {
@@ -40,12 +42,20 @@ class CustomUserDetailsServiceTest {
         testUser = new User();
         testUser.setEmail("test@example.com");
         testUser.setPassword("1234");
+        testUser.setPhoneNumber("9876543210");
         testUser.setRole(Collections.singleton(new Role(2L, UserRole.ROLE_USER)));
 
         testUserDto = new UserDto();
         testUserDto.setEmail("test@example.com");
         testUserDto.setPassword("1234");
-        testUser.setRole(Collections.singleton(new Role(2L, UserRole.ROLE_USER)));
+        testUserDto.setPhoneNumber("9999999999");
+        testUserDto.setRole(Collections.singleton(new Role(2L, UserRole.ROLE_USER)));
+
+        expectedUserDto = new UserDto();
+        expectedUserDto.setEmail("test@example.com");
+        expectedUserDto.setPassword("1234");
+        expectedUserDto.setPhoneNumber("9999999999");
+        expectedUserDto.setRole(Collections.singleton(new Role(2L, UserRole.ROLE_USER)));
 
     }
 
@@ -98,5 +108,33 @@ class CustomUserDetailsServiceTest {
         assertEquals(1, userEntity.getRole().size());
         assertEquals(UserRole.ROLE_USER, userEntity.getRole().iterator().next().getRoleName());
     }
+
+    @Test
+    void testUpdateUser() {
+        String email = "old@example.com";
+
+        User existingUser = new User();
+        existingUser.setEmail(email);
+        existingUser.setFirstname("OldName");
+
+        UserDto updateDto = new UserDto();
+        updateDto.setFirstname("NewName");
+        updateDto.setEmail("new@example.com");
+        updateDto.setPhoneNumber("9991234567");
+
+        when(userRepository.findUserByEmail(email)).thenReturn(Optional.of(existingUser));
+        when(userRepository.save(any(User.class))).thenReturn(existingUser);
+        when(userMappingUtils.mapToUserDto(any(User.class))).thenReturn(new UserDto());
+
+        UserDto result = customUserDetailsService.updateUser(email, updateDto);
+
+        assertNotNull(result);
+        assertEquals("NewName", existingUser.getFirstname());
+        assertEquals("new@example.com", existingUser.getEmail());
+        assertEquals("+79991234567", existingUser.getPhoneNumber());
+
+    }
+
+
 
 }

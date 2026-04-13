@@ -20,10 +20,9 @@ public class UserControllerTest {
     @Autowired
     private UserRepository userRepository;
     @Autowired
-    private CustomUserDetailsService userService;
-    @Autowired
     private RoleRepository roleRepository;
 
+    private Long savedUserId;
     @BeforeEach
     public void before(){
         Role role = new Role();
@@ -32,6 +31,12 @@ public class UserControllerTest {
         Role role2 = new Role();
         role2.setRoleName(UserRole.ROLE_USER);
         roleRepository.save(role2);
+        User testUser = new User();
+        testUser.setEmail("test@example.com");
+        testUser.setFirstname("TestName");
+        testUser.setLastname("TestLastname");
+        testUser.setPassword("1234");
+        savedUserId = userRepository.save(testUser).getUserId();
     }
 
     @AfterEach
@@ -42,11 +47,24 @@ public class UserControllerTest {
     @Test
     void userRegisterTest(){
         UserDto user = new UserDto();
-        user.setEmail("test@example.com");
+        user.setEmail("testUser@example.com");
         user.setPassword("1234");
         userController.userRegister(user);
-        UserDto user1 = userController.getUserByUserId(1L).getBody();
-        assertEquals(1L,user1.getUserId());
+        UserDto user1 = userController.getUserByUserId(savedUserId).getBody();
+        assertEquals(savedUserId,user1.getUserId());
         assertEquals("test@example.com",user1.getEmail());
+    }
+
+    @Test
+    void updateUserTest(){
+        UserDto user = new UserDto();
+        user.setEmail("updateTestUser@example.com");
+        user.setFirstname("updateTestName");
+        user.setLastname("updateTestLastname");
+        user.setPassword("1234");
+        UserDto user1 = userController.updateUser("test@example.com", user).getBody();
+        assertEquals("updateTestUser@example.com",user1.getEmail());
+        assertEquals("updateTestName",user1.getFirstname());
+        assertEquals("updateTestLastname",user1.getLastname());
     }
 }

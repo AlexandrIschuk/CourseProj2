@@ -1,8 +1,11 @@
 package ru.ssau.carshwebcourse.service;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.Value;
 import org.jspecify.annotations.NonNull;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import ru.ssau.carshwebcourse.exceptionHandler.InvalidTokenException;
@@ -15,11 +18,21 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+
 @Getter
 @Setter
 @Service
+@NoArgsConstructor(force = true)
 public class TokenService {
     private Long createTime;
+
+
+    private String secret;
+
+    public TokenService(String secret){
+        this.secret = secret;
+    }
 
     public String generateToken(UserDetails userDetails) throws NoSuchAlgorithmException, InvalidKeyException {
         Map<String, Object> payload = new HashMap<>();
@@ -45,7 +58,9 @@ public class TokenService {
     }
 
     public String encodingSignature(String encodedPayload) throws NoSuchAlgorithmException, InvalidKeyException {
-        String secret = System.getenv("JWT_SECRET");
+        if(Objects.equals(secret, null)){
+            secret = System.getenv("JWT_SECRET");
+        }
         Mac mac = Mac.getInstance("HmacSHA256");
         SecretKeySpec key =
                 new SecretKeySpec(secret.getBytes(), "HmacSHA256");

@@ -60,36 +60,36 @@ public class DriveService {
 <span class="fc" id="L60">                .map(driveMappingUtils::mapToDriveDto).collect(Collectors.toList());</span>
     }
 
-    public List&lt;DriveDto&gt; findAllDrivesByUser(UserDto user){
-<span class="nc" id="L64">        List&lt;Drive&gt; drives = driveRepository.findDriveHistoryByUser(userMappingUtils.mapToUserEntity(user));</span>
-<span class="nc" id="L65">        return drives.stream()</span>
-<span class="nc" id="L66">                .map(driveMappingUtils::mapToDriveDto).collect(Collectors.toList());</span>
+    public List&lt;DriveDto&gt; getHistoryDrivesByUser(UserDto user){
+<span class="fc" id="L64">        List&lt;Drive&gt; drives = driveRepository.findDriveHistoryByUser(userMappingUtils.mapToUserEntity(user));</span>
+<span class="fc" id="L65">        return drives.stream()</span>
+<span class="fc" id="L66">                .map(driveMappingUtils::mapToDriveDto).collect(Collectors.toList());</span>
     }
 
     public List&lt;DriveDto&gt; findActiveDrives(UserDto user){
-<span class="nc" id="L70">        List&lt;Drive&gt; drives = driveRepository.findDriveByDriveStatusAndUser(userMappingUtils.mapToUserEntity(user));</span>
-<span class="nc" id="L71">        return drives.stream()</span>
-<span class="nc" id="L72">                .map(driveMappingUtils::mapToDriveDto).collect(Collectors.toList());</span>
+<span class="fc" id="L70">        List&lt;Drive&gt; drives = driveRepository.findDriveByDriveStatusAndUser(userMappingUtils.mapToUserEntity(user));</span>
+<span class="fc" id="L71">        return drives.stream()</span>
+<span class="fc" id="L72">                .map(driveMappingUtils::mapToDriveDto).collect(Collectors.toList());</span>
     }
 
     public DriveDto updateDriveStatus(Long id, DriveDto drive){
-<span class="nc" id="L76">        Drive drive1 = driveRepository.findById(id).orElseThrow();</span>
-<span class="nc" id="L77">        drive1.setDriveStatus(drive.getDriveStatus());</span>
-<span class="nc" id="L78">        Tariff tariff = drive1.getTariff();</span>
-<span class="nc bnc" id="L79" title="All 2 branches missed.">        if(drive.getDriveStatus() == DriveStatus.PENDING_PAYMENT){</span>
-<span class="nc" id="L80">            drive1.setEndRental(LocalDateTime.now());</span>
-<span class="nc bnc" id="L81" title="All 2 branches missed.">            if (drive1.getTariff().getTariffType() == TariffType.KILOMETER){</span>
-<span class="nc" id="L82">                drive1.setTotalDistance(drive.getTotalDistance());</span>
-<span class="nc" id="L83">                drive1.setTotalAmount(drive.getTotalDistance()*tariff.getPrice());</span>
+<span class="fc" id="L76">        Drive drive1 = driveRepository.findById(id).orElseThrow();</span>
+<span class="fc" id="L77">        drive1.setDriveStatus(drive.getDriveStatus());</span>
+<span class="fc" id="L78">        Tariff tariff = drive1.getTariff();</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        if(drive.getDriveStatus() == DriveStatus.PENDING_PAYMENT){</span>
+<span class="fc" id="L80">            drive1.setEndRental(LocalDateTime.now());</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">            if (drive1.getTariff().getTariffType() == TariffType.KILOMETER){</span>
+<span class="fc" id="L82">                drive1.setTotalDistance(drive.getTotalDistance());</span>
+<span class="fc" id="L83">                drive1.setTotalAmount(drive.getTotalDistance()*tariff.getPrice());</span>
             }
             else {
-<span class="nc" id="L86">                long minutes = Duration.between(drive1.getStartRental(),drive1.getEndRental()).toMinutes();</span>
-<span class="nc" id="L87">                drive1.setTotalDistance(minutes);</span>
-<span class="nc" id="L88">                drive1.setTotalAmount(minutes * tariff.getPrice());</span>
+<span class="fc" id="L86">                long minutes = Duration.between(drive1.getStartRental(),drive1.getEndRental()).toMinutes();</span>
+<span class="fc" id="L87">                drive1.setTotalDistance(minutes);</span>
+<span class="fc" id="L88">                drive1.setTotalAmount(minutes * tariff.getPrice());</span>
             }
         }
-<span class="nc" id="L91">        driveRepository.save(drive1);</span>
-<span class="nc" id="L92">        return driveMappingUtils.mapToDriveDto(drive1);</span>
+<span class="fc" id="L91">        driveRepository.save(drive1);</span>
+<span class="fc" id="L92">        return driveMappingUtils.mapToDriveDto(drive1);</span>
     }
     public void completeDrive(Long id){
 <span class="fc" id="L95">        Drive drive1 = driveRepository.findById(id).orElseThrow();</span>
@@ -111,7 +111,7 @@ public class DriveService {
     }
 
     public void deleteDrive(Long id){
-<span class="nc" id="L114">        driveRepository.deleteById(id);</span>
-<span class="nc" id="L115">    }</span>
+<span class="fc" id="L114">        driveRepository.deleteById(id);</span>
+<span class="fc" id="L115">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

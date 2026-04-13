@@ -36,7 +36,7 @@ public class TariffController {
 
     @PutMapping(&quot;/{id}&quot;)
     public ResponseEntity&lt;TariffDto&gt; updateTariff(@PathVariable Long id, @RequestBody TariffDto tariff){
-<span class="nc" id="L39">        return new ResponseEntity&lt;&gt;(tariffService.updateTariff(id,tariff), HttpStatus.OK);</span>
+<span class="fc" id="L39">        return new ResponseEntity&lt;&gt;(tariffService.updateTariff(id,tariff), HttpStatus.OK);</span>
     }
 
 
