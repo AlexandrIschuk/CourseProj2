@@ -19,7 +19,6 @@ import ru.ssau.carshwebcourse.exceptionHandler.TokenCreatedTimeException;
 import ru.ssau.carshwebcourse.service.CustomUserDetailsService;
 import ru.ssau.carshwebcourse.service.TokenService;
 
-import javax.security.sasl.AuthenticationException;
 import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -36,33 +35,7 @@ public class JwtFilter extends OncePerRequestFilter {
     private CustomUserDetailsService customUserDetailsService;
     private final HandlerExceptionResolver resolver;
 
-    private static final List<String> PUBLIC_PATHS = Arrays.asList(
-            "/",
-            "/index.html",
-            "/main.js",
-            "/polyfills.js",
-            "/styles.css",
-            "/runtime.js",
-            "/vendor.js",
-            "/common.js",
-            "/assets/",
-            "/assets",
-            "/favicon.ico",
-            "/*.ico",
-            "/*.png",
-            "/*.svg",
-            "/*.jpg",
-            "/*.jpeg",
-            "/auth/login",
-            "/auth/refresh",
-            "/users/register",
-            "/api/public/"
-    );
 
-    private static final List<String> STATIC_EXTENSIONS = Arrays.asList(
-            ".js", ".css", ".html", ".ico", ".png", ".jpg", ".jpeg", ".svg", ".gif", ".webp",
-            ".json", ".xml", ".txt", ".pdf", ".woff", ".woff2", ".ttf", ".eot"
-    );
 
     public JwtFilter(TokenService tokenService,
                      @Qualifier("handlerExceptionResolver") HandlerExceptionResolver resolver) {
@@ -77,36 +50,15 @@ public class JwtFilter extends OncePerRequestFilter {
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
-        String path = request.getRequestURI();
+        String path = request.getServletPath();
 
-        return isPublicPath(path);
+        return !path.startsWith("/api/") ||
+                path.equals("/api/auth/login") ||
+                path.equals("/api/auth/refresh") ||
+                path.equals("/api/users/register");
     }
 
-    private boolean isPublicPath(String path) {
-        if (PUBLIC_PATHS.contains(path)) {
-            return true;
-        }
 
-        if (path.startsWith("/api/public/")) {
-            return true;
-        }
-
-        for (String extension : STATIC_EXTENSIONS) {
-            if (path.endsWith(extension)) {
-                return true;
-            }
-        }
-
-        if (path.startsWith("/assets/")) {
-            return true;
-        }
-
-        if (path.isEmpty() || path.equals("/")) {
-            return true;
-        }
-
-        return false;
-    }
 
     @Override
     @NullMarked
@@ -114,12 +66,6 @@ public class JwtFilter extends OncePerRequestFilter {
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
         try {
-            String path = request.getRequestURI();
-
-            if (isPublicPath(path)) {
-                filterChain.doFilter(request, response);
-                return;
-            }
 
             String authHeader = request.getHeader(HEADER_NAME);
 

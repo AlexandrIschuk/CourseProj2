@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -41,39 +42,30 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) {
         return http
-                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                //.cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(
-                                "/",
-                                "/index.html",
-                                "/*.js",
-                                "/*.css",
-                                "/*.map",
-                                "/assets/**",
-                                "/favicon.ico"
-                        ).permitAll()
-                        .requestMatchers("/users/register").permitAll()
-                        .requestMatchers("/auth/login").permitAll()
-                        .requestMatchers("/auth/refresh").permitAll()
-                        .requestMatchers(HttpMethod.DELETE,"/cars/{id}").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.PUT,"/cars/{id}").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE,"/tariffs/{id}").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET,"/cars/all").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET,"/cars/{id}").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.PUT,"/tariffs/{id}").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET,"/tariffs/{id}").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET,"/drives/all").hasRole("ADMIN")
-                        .requestMatchers("/cars/new").hasRole("ADMIN")
-                        .requestMatchers("/tariffs/new").hasRole("ADMIN")
+                        .requestMatchers("/api/users/register").permitAll()
+                        .requestMatchers("/api/auth/login").permitAll()
+                        .requestMatchers("/api/auth/refresh").permitAll()
+                        .requestMatchers(HttpMethod.DELETE,"/api/cars/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT,"/api/cars/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE,"/api/tariffs/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/api/cars/all").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/api/cars/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT,"/api/tariffs/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/api/tariffs/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/api/drives/all").hasRole("ADMIN")
+                        .requestMatchers("/api/cars/new").hasRole("ADMIN")
+                        .requestMatchers("/api/tariffs/new").hasRole("ADMIN")
                         .anyRequest().authenticated())
-                .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .securityMatcher("/api/**")
                 .authenticationProvider(authProvider())
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 //.httpBasic(Customizer.withDefaults())
                 .build();
     }
-
     @Bean
     public DaoAuthenticationProvider authProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider(userDetailsService);
@@ -81,17 +73,17 @@ public class SecurityConfig {
         return authProvider;
     }
 
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
-        configuration.setAllowedMethods(Arrays.asList("GET","POST","PUT","DELETE","OPTIONS"));
-        configuration.setAllowedHeaders(Arrays.asList("*"));
-        configuration.setAllowCredentials(true);
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
+//    @Bean
+//    public CorsConfigurationSource corsConfigurationSource() {
+//        CorsConfiguration configuration = new CorsConfiguration();
+//        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+//        configuration.setAllowedMethods(Arrays.asList("GET","POST","PUT","DELETE","OPTIONS"));
+//        configuration.setAllowedHeaders(Arrays.asList("*"));
+//        configuration.setAllowCredentials(true);
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", configuration);
+//        return source;
+//    }
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder(){

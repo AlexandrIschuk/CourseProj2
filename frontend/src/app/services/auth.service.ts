@@ -35,11 +35,6 @@ export class AuthService{
     }
   }
 
-  hasRole(allowedRole: string | null): boolean {
-    console.log(this.currentRole);
-    return allowedRole == this.currentRole;
-  }
-
   public getRoleFromToken(): Role[] {
     const decoded = this.getDecodedToken();
     this.currentRole = decoded?.roles[0].authority;

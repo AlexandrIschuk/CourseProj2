@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/drives")
+@RequestMapping("/api/drives")
 public class DriveController {
     private final DriveService driveService;
     private final CustomUserDetailsService customUserDetailsService;

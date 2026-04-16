@@ -12,7 +12,7 @@ import ru.ssau.carshwebcourse.dto.UserDto;
 import ru.ssau.carshwebcourse.service.CustomUserDetailsService;
 
 @Controller
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 @Validated
 public class UserController {
 

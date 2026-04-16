@@ -21,6 +21,7 @@ ru\ssau\carshwebcourse\entity\DriveStatus.class
 ru\ssau\carshwebcourse\service\DriveService.class
 ru\ssau\carshwebcourse\entity\Drive.class
 ru\ssau\carshwebcourse\repository\RoleRepository.class
+ru\ssau\carshwebcourse\config\WebConfig.class
 ru\ssau\carshwebcourse\exceptionHandler\NotFoundException.class
 ru\ssau\carshwebcourse\filters\JwtFilter.class
 ru\ssau\carshwebcourse\entity\PaymentStatus.class

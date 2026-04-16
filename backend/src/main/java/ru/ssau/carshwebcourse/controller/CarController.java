@@ -12,8 +12,8 @@ import ru.ssau.carshwebcourse.service.CarService;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("/cars")
+@RestController
+@RequestMapping("/api/cars")
 @Validated
 public class CarController {
     private final CarService carService;

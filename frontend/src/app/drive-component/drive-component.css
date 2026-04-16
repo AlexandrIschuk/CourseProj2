@@ -1,38 +1,55 @@
+.status {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 40px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  backdrop-filter: blur(4px);
+}
+
 .status[data-status="ACTIVE"] {
-  display: inline;
-  color: #4CAF50;
+  background: rgba(76, 175, 80, 0.15);
+  color: #6fef7a;
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.1);
 }
 
 .status[data-status="ACTIVE"]::before {
-  content: "Активна";
-
+  content: "● Активна";
 }
 
 .status[data-status="CANCELLED"] {
-  display: inline;
-  color: #f44336;
+  background: rgba(244, 67, 54, 0.15);
+  color: #ff8a80;
+  border: 1px solid rgba(244, 67, 54, 0.4);
+  box-shadow: 0 2px 8px rgba(244, 67, 54, 0.1);
 }
 
 .status[data-status="CANCELLED"]::before {
-  content: "Отменена";
+  content: "● Отменена";
 }
 
 .status[data-status="PENDING_PAYMENT"] {
-  display: inline;
-  color: darkorange;
+  background: rgba(255, 140, 0, 0.15);
+  color: #ffb347;
+  border: 1px solid rgba(255, 140, 0, 0.4);
+  box-shadow: 0 2px 8px rgba(255, 140, 0, 0.1);
 }
 
 .status[data-status="PENDING_PAYMENT"]::before {
-  content: "Ожидает оплаты";
+  content: "⏱ Ожидает оплаты";
 }
 
 .status[data-status="COMPLETED"] {
-  display: inline;
-  color: darkcyan;
+  background: rgba(0, 139, 139, 0.15);
+  color: #5dd9d9;
+  border: 1px solid rgba(0, 139, 139, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 139, 139, 0.1);
 }
 
 .status[data-status="COMPLETED"]::before {
-  content: "Завершена";
+  content: "✓ Завершена";
 }
 
 .actions {
@@ -42,44 +59,68 @@
   border-collapse: collapse;
 }
 
-.edit-btn,
-.delete-btn {
-  padding: 6px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: opacity 0.3s;
+.edit-btn,.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
+/* Общие стили для кнопок */
+.edit-btn,
+.delete-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  letter-spacing: 0.3px;
+  backdrop-filter: blur(4px);
+}
+
+/* Кнопка Редактировать */
 .edit-btn {
-  background: linear-gradient(135deg, #474747 0%, #3f374d 100%);
+  background: linear-gradient(135deg, #6c5ce7 0%, #4a40b0 100%);
   color: white;
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(108, 92, 231, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .edit-btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(108, 92, 231, 0.4);
+  background: linear-gradient(135deg, #7e6ef0 0%, #5c50c5 100%);
 }
 
+.edit-btn:active {
+  transform: translateY(1px);
+}
+
+/* Кнопка Удалить */
 .delete-btn {
-  background-color: #fafafa;
-  border: 1px solid #474747;
-  color: #474747;
-  transition: all 0.3s ease;
+  background: rgba(220, 53, 69, 0.15);
+  color: #ff8a9a;
+  border: 1px solid rgba(220, 53, 69, 0.4);
+  backdrop-filter: blur(4px);
 }
 
 .delete-btn:hover {
+  background: rgba(220, 53, 69, 0.3);
   transform: translateY(-2px);
+  border-color: rgba(220, 53, 69, 0.6);
+  color: #ffb3b3;
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.2);
 }
 
-.edit-btn:hover,
-.delete-btn:hover {
-  opacity: 0.8;
+.delete-btn:active {
+  transform: translateY(1px);
 }
 
 .td {
   padding: 12px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  color: rgba(165, 154, 255, 0.8);;
+  border-bottom: 1px solid rgba(108, 92, 231, 0.4);
 }

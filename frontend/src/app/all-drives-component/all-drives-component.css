@@ -2,51 +2,98 @@
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
-  font-family: Arial, sans-serif;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  border-radius: 12px;
-  z-index: 1000;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  background: rgba(18, 22, 35, 0.75);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .tasks-table th,
 .tasks-table td {
-  padding: 12px;
+  padding: 16px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
 }
 
-
 .tasks-table th {
-  background-color: white;
-  font-weight: bold;
-  border-radius: 12px;
-  color: #333;
-
+  background: rgba(12, 15, 25, 0.9);
+  font-weight: 700;
+  color: rgba(165, 154, 255, 0.8);
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgba(139, 124, 255, 0.3);
 }
 
 .tasks-table tr:hover {
-  background-color: #f5f5f5;
+  background: rgba(139, 124, 255, 0.08);
+  transition: all 0.2s ease;
 }
 
+/* Кнопки в таблице */
+.edit-btn,
+.delete-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  margin: 0 4px;
+}
+
+.edit-btn {
+  background: linear-gradient(135deg, #6c5ce7 0%, #4a40b0 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(108, 92, 231, 0.3);
+}
+
+.edit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.4);
+}
+
+.delete-btn {
+  background: rgba(220, 53, 69, 0.2);
+  color: #ff8a9a;
+  border: 1px solid rgba(220, 53, 69, 0.4);
+}
+
+.delete-btn:hover {
+  background: rgba(220, 53, 69, 0.35);
+  transform: translateY(-2px);
+}
+
+/* ===== АЛЕРТЫ ===== */
 .alert {
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  padding: 14px 20px;
+  border-radius: 20px;
+  margin-bottom: 24px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  animation: slideDown 0.3s ease;
+  gap: 12px;
+  animation: slideDown 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  font-weight: 500;
+  font-size: 14px;
+  backdrop-filter: blur(8px);
 }
 
 .alert-error {
-  background: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
+  background: rgba(220, 53, 69, 0.18);
+  color: #ffb3b3;
+  border: 1px solid rgba(220, 53, 69, 0.4);
 }
 
+.alert-success {
+  background: rgba(40, 167, 69, 0.18);
+  color: #a3ffb3;
+  border: 1px solid rgba(40, 167, 69, 0.4);
+}
 
 .alert-close {
   margin-left: auto;
@@ -54,11 +101,76 @@
   border: none;
   font-size: 20px;
   cursor: pointer;
-  color: #721c24;
-  opacity: 0.5;
+  color: inherit;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  font-weight: bold;
 }
 
 .alert-close:hover {
   opacity: 1;
 }
 
+/* ===== АНИМАЦИИ ===== */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1024px) {
+  .nav-label {
+    font-size: 0.85rem;
+  }
+
+  .nav-item {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-user {
+    display: none;
+  }
+
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .logo-icon {
+    font-size: 1.5rem;
+  }
+
+  .tasks-table th,
+  .tasks-table td {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+}
+
+/* ===== ОБЩИЙ КОНТЕЙНЕР ДЛЯ КОНТЕНТА ===== */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}

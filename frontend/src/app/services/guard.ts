@@ -4,13 +4,12 @@ import { AuthService } from './auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class RoleGuard implements CanActivate {
-  constructor(private authRoleService: AuthService, private router: Router) {}
+  constructor( private router: Router) {}
 
   canActivate(route: any): boolean {
     const requiredRole: string | null = route.data['role'];
-    const hasAccess = this.authRoleService.hasRole(requiredRole);
 
-    if (!hasAccess) {
+    if (requiredRole != sessionStorage.getItem('user_role')) {
       this.router.navigate(['/access-denied']);
       return false;
     }

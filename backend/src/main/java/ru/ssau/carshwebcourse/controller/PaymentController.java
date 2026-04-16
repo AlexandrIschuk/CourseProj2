@@ -15,7 +15,7 @@ import ru.ssau.carshwebcourse.service.PaymentService;
 import java.util.List;
 
 @Controller
-@RequestMapping("/payments")
+@RequestMapping("/api/payments")
 public class PaymentController {
     private final PaymentService paymentService;
     private final CustomUserDetailsService userDetailsService;

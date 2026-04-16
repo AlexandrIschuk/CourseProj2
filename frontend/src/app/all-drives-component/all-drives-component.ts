@@ -35,13 +35,13 @@ export class AllDrivesComponent implements OnInit{
 
   protected getUserInfo(userId: number) {
     const ref = this.dialogService.open(UserByDriveComponent, {
-      width: '550px',
+      width: '450px',
       data: {
-        userId: userId
+        userId: userId,
       },
       styleClass: 'complete-trip-dialog',
       closable: true,
-      dismissableMask: true
+      dismissableMask: true,
     });
   }
 }

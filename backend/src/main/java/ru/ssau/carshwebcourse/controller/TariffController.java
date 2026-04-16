@@ -11,7 +11,7 @@ import ru.ssau.carshwebcourse.service.TariffService;
 import java.util.List;
 
 @Controller
-@RequestMapping("/tariffs")
+@RequestMapping("/api/tariffs")
 public class TariffController {
     private final TariffService tariffService;
 
